@@ -1,0 +1,796 @@
+/* ===================================
+   MUSEO PAGANI - STORE MAIN PAGE STYLES
+   Mantiene coerenza totale con homepage
+   =================================== */
+
+/* ========== ROOT VARIABLES (UGUALI ALLA HOMEPAGE) ========== */
+:root {
+    /* Colors */
+    --color-yellow: #f5c900;
+    --color-grey: #1e1e1e;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-red-placeholder: #ff0000;
+    
+    /* Typography */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Satoshi', sans-serif;
+    --font-weight: bold;
+    
+    /* Spacing */
+    --spacing-section: 80px;
+    --border-radius: 25px;
+    --mobile-margin: 15px;
+}
+
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ========== CONTAINER CUSTOMIZATION ========== */
+.container-fluid {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 0;
+}
+
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+[class*='col-'] {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+/* ========== PLACEHOLDER STYLES (ROSSI COME HOMEPAGE) ========== */
+.carousel-image-placeholder,
+.category-image-placeholder,
+.product-image-placeholder,
+.social-icon-placeholder {
+    background-color: var(--color-red-placeholder);
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+}
+
+.social-icon-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+}
+
+/* ========================================
+   CAROUSEL HERO SECTION
+   Identica alla hero section della homepage
+   ======================================== */
+.carousel-hero-section {
+    margin-bottom: var(--spacing-section);
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.carousel-hero-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 720px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Carousel Slides */
+.carousel-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-image-placeholder {
+    position: absolute;
+    inset: 0;
+}
+
+/* Overlay */
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    border-radius: var(--border-radius);
+}
+
+/* Contenuto Fisso */
+.carousel-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.carousel-title {
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 1.1;
+    color: var(--color-white);
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.btn-carousel {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    font-family: var(--font-body);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 12px 36px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: var(--font-weight);
+}
+
+.btn-carousel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 201, 0, 0.4);
+}
+
+/* Dots Indicator */
+.carousel-dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0;
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background-color: var(--color-yellow);
+}
+
+/* ========================================
+   CATEGORIES SECTION
+   3 box categorie
+   ======================================== */
+.categories-section {
+    margin-bottom: var(--spacing-section);
+}
+
+.category-padding {
+    padding: 10px !important;
+    
+}
+.category-padding.first-category {
+    padding-left: 0 !important;
+}
+
+.category-padding.third-category {
+    padding-right: 0 !important;
+}
+
+.category-box {
+    display: block;
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(245, 201, 0, 0.2);
+}
+
+.category-image-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.category-content {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-title {
+    font-family: var(--font-display);
+    font-size: 56px;
+    color: var(--color-white);
+    letter-spacing: 1px;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* ========================================
+   PRODUCTS SECTION
+   Identica alla sezione Related Products
+   ======================================== */
+.products-section {
+    margin-bottom: var(--spacing-section);
+}
+
+.product-padding {
+    padding: 10px !important;
+}
+
+.product-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-link:hover .product-box {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(245, 201, 0, 0.2);
+}
+
+.product-image-placeholder {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+}
+
+.product-info-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-link:hover .product-info-box {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(245, 201, 0, 0.2);
+}
+
+.product-name {
+    font-family: var(--font-body);
+    font-size: 18px;
+    color: var(--color-white);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.product-price {
+    font-family: var(--font-display);
+    font-size: 32px;
+    color: var(--color-yellow);
+    letter-spacing: 1px;
+    line-height: 1.1;
+    font-weight: normal;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer-container {
+    padding: 60px 0;
+    position: relative;
+}
+
+.footer-info {
+    color: var(--color-white);
+}
+
+.footer-company {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.footer-section-title {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.footer-text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.footer-email,
+.footer-sales {
+    margin-top: 12px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.btn-get-in-touch {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    font-family: var(--font-body);
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    padding: 16px 56px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: bold;
+}
+
+.btn-get-in-touch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 201, 0, 0.4);
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-link {
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-4px);
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    opacity: 1;
+    z-index: 100;
+}
+
+.scroll-to-top.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   FOOTER DESKTOP LAYOUT
+   ======================================== */
+@media (min-width: 992px) {
+    .footer-container > .container-fluid > .row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+    }
+    
+    .footer-container .col-md-6:first-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .footer-container .col-md-6:last-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        justify-content: flex-start !important;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .footer-right {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        gap: 20px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (max-width: 991px)
+   ======================================== */
+@media (max-width: 991px) {
+    :root {
+        --spacing-section: 50px;
+    }
+    
+    .container-fluid {
+        padding-left: var(--mobile-margin);
+        padding-right: var(--mobile-margin);
+    }
+    
+    /* Carousel Hero */
+    .carousel-hero-box {
+        height: 600px;
+    }
+    
+    .carousel-title {
+        font-size: 48px;
+    }
+    
+    .btn-carousel {
+        font-size: 16px;
+        padding: 12px 36px;
+    }
+    
+    .carousel-dots {
+        bottom: 30px;
+    }
+    
+    /* Categories */
+    .category-padding {
+        padding: 10px !important;
+        margin-bottom: 0;
+    }
+    
+    .category-box {
+        height: 250px;
+    }
+    
+    .category-title {
+        font-size: 48px;
+    }
+    
+    /* Products */
+    .product-name {
+        font-size: 18px;
+    }
+    
+    .product-price {
+        font-size: 28px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   ======================================== */
+@media (max-width: 768px) {
+    :root {
+        --spacing-section: 40px;
+        --mobile-margin: 20px;
+    }
+    
+    /* Carousel Hero */
+    .carousel-hero-box {
+        height: 600px;
+    }
+    
+    .carousel-content {
+        padding: 0 30px;
+    }
+    
+    .carousel-title {
+        font-size: 38px;
+        margin-bottom: 24px;
+    }
+    
+    .btn-carousel {
+        font-size: 14px;
+        padding: 10px 28px;
+    }
+    
+    .carousel-dots {
+        bottom: 25px;
+        gap: 10px;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    /* Categories */
+    .category-padding {
+        padding: 10px !important;
+    }
+    
+    .category-box {
+        height: 200px;
+        margin-bottom: 0;
+    }
+    
+    .category-title {
+        font-size: 42px;
+    }
+    
+    /* Products */
+    .product-padding {
+        padding: 5px !important;
+    }
+    
+    .product-info-box {
+        padding: 20px 24px;
+    }
+    
+    .product-name {
+        font-size: 16px;
+    }
+    
+    .product-price {
+        font-size: 24px;
+    }
+    
+    /* Footer */
+    .footer-container {
+        padding: 40px 0;
+    }
+    
+    .footer-company {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-section-title {
+        font-size: 18px;
+    }
+    
+    .footer-text {
+        font-size: 15px;
+    }
+    
+    .footer-right {
+        align-items: flex-start;
+        margin-top: 40px;
+        gap: 30px;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 16px;
+        padding: 12px 40px;
+    }
+    
+    .social-icons {
+        gap: 12px;
+    }
+    
+    .social-icon-placeholder {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .scroll-to-top {
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE PICCOLO (max-width: 576px)
+   ======================================== */
+@media (max-width: 576px) {
+    :root {
+        --spacing-section: 35px;
+    }
+    
+    /* Carousel Hero */
+    .carousel-hero-box {
+        height: 600px;
+    }
+    
+    .carousel-content {
+        padding: 0 25px;
+    }
+    
+    .carousel-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    
+    .btn-carousel {
+        font-size: 13px;
+        padding: 9px 24px;
+    }
+    
+    .carousel-dots {
+        bottom: 20px;
+        gap: 8px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    /* Categories */
+    .category-box {
+        height: 180px;
+    }
+    
+    .category-title {
+        font-size: 36px;
+    }
+    
+    /* Products */
+    .product-info-box {
+        padding: 18px 20px;
+    }
+    
+    .product-name {
+        font-size: 15px;
+    }
+    
+    .product-price {
+        font-size: 22px;
+    }
+    
+    /* Footer */
+    .footer-company {
+        font-size: 17px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-section-title {
+        font-size: 17px;
+    }
+    
+    .footer-text {
+        font-size: 14px;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 15px;
+        padding: 11px 36px;
+    }
+    
+    .social-icon-placeholder {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .scroll-to-top {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* ===================================
+   FIX DEFINITIVO ALLINEAMENTO E DIMENSIONI
+   Usa margini negativi sulla riga per allineare ai bordi
+   mantenendo le card di dimensioni identiche.
+   =================================== */
+
+/* 1. DESKTOP (Padding di 10px) */
+@media (min-width: 769px) {
+    /* Resettiamo il padding uguale per TUTTE le card, così hanno la stessa larghezza */
+    .products-section .product-padding {
+        padding: 10px !important;
+    }
+
+    /* Tiriamo la riga verso l'esterno di 10px a dx e sx */
+    /* In questo modo il padding sinistro della prima card viene assorbito dal margine negativo */
+    .products-section .row {
+        margin-left: -10px !important;
+        margin-right: -10px !important;
+        width: calc(100% + 20px) !important; /* Compensa lo spostamento */
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+/* 2. MOBILE (Padding di 5px come da tuo CSS originale) */
+@media (max-width: 768px) {
+    /* Padding uniforme per tutti */
+    .products-section .product-padding {
+        padding: 5px !important;
+    }
+
+    /* Margine negativo ridotto per il mobile */
+    .products-section .row {
+        margin-left: -5px !important;
+        margin-right: -5px !important;
+        width: calc(100% + 10px) !important;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

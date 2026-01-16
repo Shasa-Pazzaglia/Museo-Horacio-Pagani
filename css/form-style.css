@@ -1,0 +1,430 @@
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #000000;
+    padding: 50px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 50px;
+    line-height: 1;
+    cursor: pointer;
+    font-weight: 200;
+}
+.close-btn:hover {
+    opacity: 0.7;
+}
+
+.radio-group {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.radio-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 286px;
+    height: 82px;
+    background-color: #1e1e1e;
+    padding: 20px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.radio-text {
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.radio-btn:hover {
+    background-color: #252525;
+}
+
+.radio-circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-circle-inner {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    display: none;
+}
+
+.radio-btn input[type="radio"]:checked ~ label .radio-circle-inner {
+    display: block;
+}
+
+.radio-btn input[type="radio"] {
+    display: none;
+}
+
+.radio-btn label {
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.form-input {
+    width: 591px;
+    height: 82px;
+    background-color: #1e1e1e;
+    border: none;
+    color: white;
+    padding: 20px 20px;
+    border-radius: 25px;
+    font-size: 32px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: #888;
+}
+
+.form-input:focus {
+    outline: 2px solid #F5C900;
+}
+
+.form-textarea {
+    width: 591px;
+    height: 587px;
+    background-color: #1e1e1e;
+    border: none;
+    color: white;
+    padding: 20px 20px;
+    border-radius: 25px;
+    font-size: 32px;
+    resize: none;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-textarea::placeholder {
+    color: #888;
+}
+
+.form-textarea:focus {
+    outline: 2px solid #F5C900;
+}
+
+.submit-btn {
+    width: 591px;
+    height: 82px;
+    background-color: #F5C900;
+    border: none;
+    color: #000000;
+    padding: 20px 20px;
+    border-radius: 25px;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #d4ad00;
+    opacity: 0.9;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    margin: 0 -15px;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    padding: 0 15px;
+}
+
+/* ==========================================
+   LIGHTBOX
+   ========================================== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    background-color: #1e1e1e;
+    border-radius: 25px;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.lightbox-close:hover {
+    opacity: 0.7;
+}
+
+.lightbox-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #F5C900;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 40px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.lightbox-title {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    margin: 0 0 15px;
+}
+
+.lightbox-text {
+    color: #888;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0 0 30px;
+    line-height: 1.5;
+}
+
+.lightbox-btn {
+    background-color: #F5C900;
+    border: none;
+    color: #000000;
+    padding: 15px 60px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.lightbox-btn:hover {
+    background-color: #d4ad00;
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+   ========================================== */
+@media (max-width: 767px) {
+    .form-container {
+        padding: 15px 10px;
+    }
+
+    .close-btn {
+        display: none;
+    }
+
+    /* Bootstrap override for mobile - force single column */
+    .container-fluid {
+        padding: 0;
+    }
+
+    /* Usiamo CSS Grid per riordinare gli elementi */
+    .row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin: 0;
+    }
+
+    /* Le colonne diventano trasparenti per permettere il riordino */
+    .col-6,
+    .left-column {
+        display: contents;
+    }
+
+    /* Ordine elementi: radio -> inputs -> textarea -> bottone */
+    .radio-group { order: 1; }
+    .form-input { order: 2; }
+    .form-textarea { order: 3; }
+    .submit-btn { order: 4; }
+
+    /* Privato/Azienda buttons */
+    .radio-group {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .radio-btn {
+        height: 55px;
+        padding: 12px 15px;
+        border-radius: 25px;
+        flex: 1;
+        gap: 8px;
+        justify-content: center;
+        width: auto;
+    }
+
+    .radio-text {
+        font-size: 18px;
+    }
+
+    .radio-circle {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+    }
+
+    .radio-circle-inner {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Form inputs - full width con spaziatura uniforme */
+    .form-input {
+        width: 100%;
+        max-width: 100%;
+        height: 55px;
+        font-size: 18px;
+        padding: 15px 18px;
+        border-radius: 25px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Textarea - large area like in image */
+    .form-textarea {
+        width: 100%;
+        max-width: 100%;
+        height: 350px;
+        font-size: 18px;
+        padding: 15px 18px;
+        border-radius: 25px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Submit button */
+    .submit-btn {
+        width: 100%;
+        max-width: 100%;
+        height: 55px;
+        font-size: 18px;
+        padding: 15px 20px;
+        border-radius: 25px;
+        margin-top: 0;
+        box-sizing: border-box;
+    }
+
+    /* Lightbox mobile */
+    .lightbox-content {
+        padding: 30px 20px;
+        margin: 15px;
+    }
+
+    .lightbox-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .lightbox-title {
+        font-size: 22px;
+    }
+
+    .lightbox-text {
+        font-size: 14px;
+    }
+
+    .lightbox-btn {
+        padding: 12px 40px;
+        font-size: 16px;
+    }
+}
+
+/* Tablet responsive */
+@media (min-width: 768px) and (max-width: 991px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 600px;
+    }
+
+    .radio-group,
+    .form-input,
+    .form-textarea,
+    .submit-btn {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .radio-btn {
+        flex: 1;
+    }
+}

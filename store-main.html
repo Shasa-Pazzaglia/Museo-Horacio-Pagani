@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - Museo Horacio Pagani</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/Logo_Cerchi_White.svg">
+    
+    <!-- Bootstrap Grid CSS -->
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/store-main-styles.css">
+    <link rel="stylesheet" href="css/header-style.css">
+    
+    <!-- Fix Footer Desktop -->
+    <style>
+        @media (min-width: 992px) {
+            .footer-container .row {
+                position: relative;
+            }
+            .footer-right {
+                position: absolute !important;
+                bottom: 40px !important;
+                right: 40px !important;
+                top: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-end !important;
+                justify-content: flex-start !important;
+                gap: 30px !important;
+            }
+            .footer-right .scroll-to-top {
+                position: fixed !important;
+                margin-bottom: 0 !important;
+                z-index: 1000 !important;
+            }
+            .footer-right .scroll-to-top:not(.hidden) {
+                opacity: 1 !important;
+            }
+            .footer-right .btn-get-in-touch {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                transform: translateX(20px) !important;
+            }
+            .footer-right .social-icons {
+                transform: translateX(16px) !important;
+            }
+        }
+        
+        /* Fix Header Mobile */
+        @media (max-width: 991px) {
+            .main-header {
+                padding: 20px 20px 0 20px !important;
+            }
+            .main-header .container-fluid {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .header-container {
+                border-radius: 25px !important;
+            }
+            .header-logo-col {
+                position: relative !important;
+                left: auto !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ========================================
+         OVERLAY MENU MOBILE
+         ======================================== -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        
+        <!-- Header Mobile: ITA/ENG + Icone (in alto a destra) -->
+        <div class="mobile-menu-header">
+            
+            <!-- Icona Area Privata -->
+            <a href="#" class="header-icon" aria-label="Area Privata">
+                <span class="icon-placeholder"></span>
+            </a>
+            
+            <!-- Icona Carrello -->
+            <a href="#" class="header-icon" aria-label="Carrello">
+                <span class="icon-placeholder"></span>
+            </a>
+            
+            <!-- Switcher Lingua -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="ita">ITA</button>
+                <span class="separator">|</span>
+                <button class="lang-btn" data-lang="eng">ENG</button>
+            </div>
+
+        </div>
+        
+        <!-- Bottone Chiusura (X) -->
+        <button class="close-menu-btn" id="closeMenuBtn" aria-label="Chiudi Menu">
+            <span class="close-icon"></span>
+        </button>
+
+        <!-- Contenuto Menu Mobile -->
+        <div class="mobile-menu-content">
+            
+            <!-- Links Menu Mobile -->
+            <nav class="mobile-menu-links">
+                <a href="visita.html">Visita</a>
+                <a href="eventi.html">Eventi</a>
+                <a href="collezione.html">Collezione</a>
+                <a href="store-main.html">Store</a>
+            </nav>
+
+        </div>
+
+    </div>
+
+    <!-- ========================================
+         HEADER DESKTOP
+         ======================================== -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 px-0">
+                    <div class="header-container">
+                        
+                        <!-- ROW INTERNA PER LAYOUT A 3 COLONNE -->
+                        <div class="header-row w-100">
+                            
+                            <!-- ===== COLONNA 1: LOGO (SINISTRA) ===== -->
+                            <div class="header-logo-col">
+                                <div class="logo-box">
+                                    <a href="index.html" class="logo-link" aria-label="Torna alla Home">
+                                        <span class="logo-placeholder"></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- ===== COLONNA 2: NAVIGAZIONE (CENTRATA TRA LOGO E ITA/ENG) ===== -->
+                            <div class="header-nav-col d-none d-lg-flex">
+                                <nav class="nav-links">
+                                    <a href="visita.html">Visita</a>
+                                    <a href="eventi.html">Eventi</a>
+                                    <a href="collezione.html">Collezione</a>
+                                    <a href="store-main.html">Store</a>
+                                </nav>
+                            </div>
+
+                            <!-- ===== COLONNA 3: AZIONI DESTRA (ITA/ENG + BIGLIETTO + ICONE) ===== -->
+                            <div class="header-actions-col">
+                                <div class="actions">
+                                    
+                                    <!-- Switcher Lingua (Solo Desktop) -->
+                                    <div class="lang-switcher d-none d-lg-flex">
+                                        <button class="lang-btn active" data-lang="ita">ITA</button>
+                                        <span class="separator">|</span>
+                                        <button class="lang-btn" data-lang="eng">ENG</button>
+                                    </div>
+
+                                    <!-- Bottone Biglietto (Sempre visibile) -->
+                                    <a href="#" class="btn-ticket">Biglietto</a>
+
+                                    <!-- Icona Area Privata (Solo Desktop) -->
+                                    <a href="#" class="header-icon d-none d-lg-flex" aria-label="Area Privata">
+                                        <span class="icon-placeholder"></span>
+                                    </a>
+
+                                    <!-- Icona Carrello (Solo Desktop) -->
+                                    <a href="#" class="header-icon d-none d-lg-flex" aria-label="Carrello">
+                                        <span class="icon-placeholder"></span>
+                                    </a>
+                                    
+                                    <!-- Menu Hamburger (Solo Mobile/Tablet) -->
+                                    <button class="hamburger-btn d-lg-none" id="hamburgerBtn" aria-label="Apri Menu">
+                                        <span class="hamburger-icon"></span>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================
+         CAROUSEL SECTION
+         Auto-play carousel con titolo e bottone fissi
+         ======================================== -->
+    <section class="carousel-hero-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 m-0 p-0">
+                    <div class="carousel-hero-box">
+                        
+                        <!-- Carousel Slides -->
+                        <div class="carousel-slides">
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide active">
+                                <div class="carousel-image-placeholder"></div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide">
+                                <div class="carousel-image-placeholder"></div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide">
+                                <div class="carousel-image-placeholder"></div>
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="carousel-slide">
+                                <div class="carousel-image-placeholder"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Overlay -->
+                        <div class="image-overlay"></div>
+                        
+                        <!-- Contenuto Fisso (Titolo + Bottone) -->
+                        <div class="carousel-content">
+                            <h1 class="carousel-title">PAGANI UTOPIA BY BAPE</h1>
+                            <a href="#" class="btn-carousel">Scopri la collezione</a>
+                        </div>
+                        
+                        <!-- Dots Indicator -->
+                        <div class="carousel-dots">
+                            <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+                            <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+                            <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+                            <button class="dot" data-slide="3" aria-label="Slide 4"></button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         CATEGORIES SECTION
+         3 box categorie
+         ======================================== -->
+    <section class="categories-section">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- Categoria 1: Collezioni -->
+                <div class="col-12 col-lg-4 category-padding first-category">
+                    <a href="#" class="category-box">
+                        <div class="category-image-placeholder"></div>
+                        <div class="image-overlay"></div>
+                        <div class="category-content">
+                            <h2 class="category-title">Collezioni</h2>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Categoria 2: Accessori -->
+                <div class="col-12 col-lg-4 category-padding">
+                    <a href="#" class="category-box">
+                        <div class="category-image-placeholder"></div>
+                        <div class="image-overlay"></div>
+                        <div class="category-content">
+                            <h2 class="category-title">Accessori</h2>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Categoria 3: Collezionabili -->
+                <div class="col-12 col-lg-4 category-padding third-category">
+                    <a href="#" class="category-box">
+                        <div class="category-image-placeholder"></div>
+                        <div class="image-overlay"></div>
+                        <div class="category-content">
+                            <h2 class="category-title">Collezionabili</h2>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         PRODUCTS SECTION
+         Identica alla sezione Related Products
+         ======================================== -->
+    <section class="products-section">
+        <div class="container-fluid">
+            
+            <!-- Products Grid -->
+            <div class="row">
+                
+                <!-- Product 1 -->
+                <div class="col-6 col-lg-3 product-padding">
+                    <a href="store.html" class="product-link">
+                        <div class="product-box">
+                            <div class="product-image-placeholder"></div>
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">Pagani Utopia By BAPE® T-Shirt</h3>
+                            <p class="product-price">€80,00</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="col-6 col-lg-3 product-padding">
+                    <a href="store.html" class="product-link">
+                        <div class="product-box">
+                            <div class="product-image-placeholder"></div>
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">Pagani Utopia By BAPE® Milo</h3>
+                            <p class="product-price">€80,00</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="col-6 col-lg-3 product-padding">
+                    <a href="store.html" class="product-link">
+                        <div class="product-box">
+                            <div class="product-image-placeholder"></div>
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">Pagani Utopia By BAPE® BAPE STA</h3>
+                            <p class="product-price">€199,00</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="col-6 col-lg-3 product-padding">
+                    <a href="store.html" class="product-link">
+                        <div class="product-box">
+                            <div class="product-image-placeholder"></div>
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">Pagani Utopia By BAPE® Berretto</h3>
+                            <p class="product-price">€67,00</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="col-6 col-lg-3 product-padding">
+                    <a href="store.html" class="product-link">
+                        <div class="product-box">
+                            <div class="product-image-placeholder"></div>
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">Pagani Utopia By BAPE® Tracks</h3>
+                            <p class="product-price">€210,00</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="col-6 col-lg-3 product-padding">
+                    <a href="store.html" class="product-link">
+                        <div class="product-box">
+                            <div class="product-image-placeholder"></div>
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">Pagani Utopia By BAPE® Full-Zip</h3>
+                            <p class="product-price">€272,00</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="col-6 col-lg-3 product-padding">
+                    <a href="store.html" class="product-link">
+                        <div class="product-box">
+                            <div class="product-image-placeholder"></div>
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">Pagani Utopia By BAPE® Gillet</h3>
+                            <p class="product-price">€285,00</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="col-6 col-lg-3 product-padding">
+                    <a href="store.html" class="product-link">
+                        <div class="product-box">
+                            <div class="product-image-placeholder"></div>
+                        </div>
+                        <div class="product-info-box">
+                            <h3 class="product-name">Pagani Utopia By BAPE® K-holder</h3>
+                            <p class="product-price">€45,00</p>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- Company Info & Contacts (6 colonne) -->
+                <div class="col-12 col-md-6">
+                    <div class="footer-info">
+                        <h3 class="footer-company">Pagani s.p.a</h3>
+                        <div class="footer-contacts">
+                            <h4 class="footer-section-title">Locations & Contacts</h4>
+                            <p class="footer-text">Via dell' Industria 26 (MO)</p>
+                            <p class="footer-text">Tel. +39 059 4739201</p>
+                            <p class="footer-text footer-email"><a href="mailto:info@pagani.com">info@pagani.com</a></p>
+                            <p class="footer-text footer-sales">Ufficio vendite: <a href="mailto:sales@pagani.com">sales@pagani.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA & Social (6 colonne) -->
+                <div class="col-12 col-md-6">
+                    <div class="footer-right">
+                        
+                        <!-- Scroll to Top Button -->
+                        <button class="scroll-to-top" aria-label="Scroll to top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+
+                        <a href="#" class="btn-get-in-touch">Get in touch</a>
+
+                        <div class="social-icons">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="TikTok">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+    <!-- Header JavaScript (Menu + Lingua) -->
+    <script src="js/header-script.js"></script>
+    
+    <!-- Store Main JavaScript (Carousel + Scroll) -->
+    <script src="js/store-main-script.js"></script>
+
+</body>
+</html>

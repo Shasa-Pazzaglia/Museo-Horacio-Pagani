@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Horacio Pagani - Catalogo Zonda</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/Logo_Cerchi_White.svg">
+    
+    <!-- Bootstrap Grid CSS -->
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/header-style.css">
+    <link rel="stylesheet" href="css/collezione-dettaglio-style.css">
+    
+    <!-- Fix Footer Desktop & Header Mobile -->
+    <style>
+        @media (min-width: 992px) {
+            .footer-container .row {
+                position: relative;
+            }
+            .footer-right {
+                position: absolute !important;
+                bottom: 40px !important;
+                right: 40px !important;
+                top: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-end !important;
+                justify-content: flex-start !important;
+                gap: 30px !important;
+            }
+            .footer-right .scroll-to-top {
+                position: fixed !important;
+                margin-bottom: 0 !important;
+                z-index: 1000 !important;
+            }
+            .footer-right .scroll-to-top:not(.hidden) {
+                opacity: 1 !important;
+            }
+            .footer-right .btn-get-in-touch {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                transform: translateX(20px) !important;
+            }
+            .footer-right .social-icons {
+                transform: translateX(16px) !important;
+            }
+        }
+        
+        /* Fix Header Mobile */
+        @media (max-width: 991px) {
+            .main-header {
+                padding: 20px 20px 0 20px !important;
+            }
+            .main-header .container-fluid {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .header-container {
+                border-radius: 25px !important;
+            }
+            .header-logo-col {
+                position: relative !important;
+                left: auto !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ========================================
+         OVERLAY MENU MOBILE
+         ======================================== -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="header-icon" aria-label="Area Privata">
+                <span class="icon-placeholder"></span>
+            </a>
+            <a href="#" class="header-icon" aria-label="Carrello">
+                <span class="icon-placeholder"></span>
+            </a>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="ita">ITA</button>
+                <span class="separator">|</span>
+                <button class="lang-btn" data-lang="eng">ENG</button>
+            </div>
+        </div>
+        
+        <button class="close-menu-btn" id="closeMenuBtn" aria-label="Chiudi Menu">
+            <span class="close-icon"></span>
+        </button>
+
+        <div class="mobile-menu-content">
+            <nav class="mobile-menu-links">
+                <a href="visita.html">Visita</a>
+                <a href="eventi.html">Eventi</a>
+                <a href="collezione.html">Collezione</a>
+                <a href="store-main.html">Store</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ========================================
+         HEADER DESKTOP
+         ======================================== -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 px-0">
+                    <div class="header-container">
+                        <div class="header-row w-100">
+                            <div class="header-logo-col">
+                                <div class="logo-box">
+                                    <a href="index.html" class="logo-link" aria-label="Torna alla Home">
+                                        <span class="logo-placeholder"></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="header-nav-col d-none d-lg-flex">
+                                <nav class="nav-links">
+                                    <a href="visita.html">Visita</a>
+                                    <a href="eventi.html">Eventi</a>
+                                    <a href="collezione.html">Collezione</a>
+                                    <a href="store-main.html">Store</a>
+                                </nav>
+                            </div>
+
+                            <div class="header-actions-col">
+                                <div class="actions">
+                                    <div class="lang-switcher d-none d-lg-flex">
+                                        <button class="lang-btn active" data-lang="ita">ITA</button>
+                                        <span class="separator">|</span>
+                                        <button class="lang-btn" data-lang="eng">ENG</button>
+                                    </div>
+
+                                    <a href="#" class="btn-ticket">Biglietto</a>
+
+                                    <a href="#" class="header-icon d-none d-lg-flex" aria-label="Area Privata">
+                                        <span class="icon-placeholder"></span>
+                                    </a>
+
+                                    <a href="#" class="header-icon d-none d-lg-flex" aria-label="Carrello">
+                                        <span class="icon-placeholder"></span>
+                                    </a>
+                                    
+                                    <button class="hamburger-btn d-lg-none" id="hamburgerBtn" aria-label="Apri Menu">
+                                        <span class="hamburger-icon"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================
+         TIMELINE & DETAILS SECTION
+         ======================================== -->
+    <section class="timeline-section">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Timeline Column (Left) -->
+                <div class="col-12 col-lg-5 timeline-column">
+                    <div class="timeline-container">
+                        <!-- Menu Button -->
+                        <button class="timeline-menu-btn" id="timelineMenuBtn" aria-label="Apri Menu Modelli">
+                            <span class="menu-icon">☰</span>
+                        </button>
+
+                        <!-- Timeline Track -->
+                        <div class="timeline-track-wrapper">
+                            <div class="timeline-line"></div>
+                            <div class="timeline-track" id="timelineTrack">
+                                <div class="timeline-item" data-year="2009" data-model="Zonda Cinque Roadster">
+                                    <div class="timeline-year">2009</div>
+                                    <div class="timeline-model">Zonda Cinque Roadster</div>
+                                </div>
+                                <div class="timeline-item active" data-year="2009" data-model="Zonda R">
+                                    <div class="timeline-year">2009</div>
+                                    <div class="timeline-model">Zonda R</div>
+                                </div>
+                                <div class="timeline-item" data-year="2010" data-model="Zonda Tricolore">
+                                    <div class="timeline-year">2010</div>
+                                    <div class="timeline-model">Zonda Tricolore</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline Controls -->
+                        <div class="timeline-controls">
+                            <button class="timeline-btn timeline-prev" id="timelinePrev" aria-label="Modello Precedente">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button class="timeline-btn timeline-next" id="timelineNext" aria-label="Modello Successivo">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Details Column (Right) -->
+                <div class="col-12 col-lg-7 details-column">
+                    <div class="details-container">
+                        <!-- Card con Titolo e Testo -->
+                        <div class="details-card">
+                            <h1 class="model-title">ZONDA R</h1>
+                            <p class="model-description">
+                                Nel rispetto di un vento che soffia sempre più forte e veloce, Zonda R nasce per la pista e per la città, senza limiti, pronta per esprimere il proprio carattere in totale purezza e libertà. Ispirata alla versione F, la Zonda R ha un passo e una carreggiata specifica richiesta di un cliente e vive di un know-how ingegneristico dedicato, frutto della massima espressione tecnologica del team Pagani.
+                            </p>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="details-actions">
+                            <button class="action-card" id="readMoreBtn">
+                                <span class="action-text">Leggi di più</span>
+                            </button>
+                            <button class="action-card" id="galleryBtn">
+                                <span class="action-text">Galleria</span>
+                            </button>
+                            <button class="action-card" id="techDataBtn">
+                                <span class="action-text">Dati tecnici</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         GALLERY SECTION
+         ======================================== -->
+    <section class="gallery-section" id="gallerySection">
+        <div class="container-fluid">
+            
+            <!-- Title Box -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="gallery-title-box">
+                        <h2 class="section-title">
+                            <span class="title-highlight">GALLERIA</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="gallery-grid">
+                        <!-- Large Image - Top Left -->
+                        <div class="gallery-item gallery-large-1">
+                            <div class="gallery-image-placeholder"></div>
+                        </div>
+
+                        <!-- Medium Image - Top Center -->
+                        <div class="gallery-item gallery-medium-1">
+                            <div class="gallery-image-placeholder"></div>
+                        </div>
+
+                        <!-- Tall Image - Top Right -->
+                        <div class="gallery-item gallery-tall-1">
+                            <div class="gallery-image-placeholder"></div>
+                        </div>
+
+                        <!-- Small Square - Middle Left -->
+                        <div class="gallery-item gallery-small-1">
+                            <div class="gallery-image-placeholder"></div>
+                        </div>
+
+                        <!-- Small Square - Middle Center -->
+                        <div class="gallery-item gallery-small-2">
+                            <div class="gallery-image-placeholder"></div>
+                        </div>
+
+                        <!-- Wide Image - Bottom Left -->
+                        <div class="gallery-item gallery-wide-1">
+                            <div class="gallery-image-placeholder"></div>
+                        </div>
+
+                        <!-- Tall Image - Bottom Right -->
+                        <div class="gallery-item gallery-tall-2">
+                            <div class="gallery-image-placeholder"></div>
+                        </div>
+
+                        <!-- Medium Image - Bottom Right 2 -->
+                        <div class="gallery-item gallery-medium-2">
+                            <div class="gallery-image-placeholder"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         TECHNICAL DATA SECTION
+         ======================================== -->
+    <section class="tech-data-section" id="techDataSection">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="tech-title-box">
+                        <h2 class="section-title">
+                            DATI <span class="title-highlight">TECNICI</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="tech-container">
+                        <div class="tech-car-image">
+                            <div class="car-image-placeholder"></div>
+                        </div>
+
+                        <!-- Technical Icons with Lines -->
+                        <button class="tech-icon" data-tech="speed" style="top: 20%; left: 8%;">
+                            <div class="tech-icon-circle"></div>
+                            <div class="tech-line" style="width: 80px; transform: rotate(-25deg);"></div>
+                        </button>
+
+                        <button class="tech-icon" data-tech="transmission" style="top: 15%; left: 25%;">
+                            <div class="tech-icon-circle"></div>
+                            <div class="tech-line" style="width: 60px; transform: rotate(35deg);"></div>
+                        </button>
+
+                        <button class="tech-icon" data-tech="chassis" style="top: 12%; left: 50%;">
+                            <div class="tech-icon-circle"></div>
+                            <div class="tech-line" style="width: 70px; transform: rotate(15deg);"></div>
+                        </button>
+
+                        <button class="tech-icon" data-tech="engine" style="top: 18%; right: 25%;">
+                            <div class="tech-icon-circle"></div>
+                            <div class="tech-line" style="width: 65px; transform: rotate(-30deg);"></div>
+                        </button>
+
+                        <button class="tech-icon" data-tech="exhaust" style="top: 20%; right: 8%;">
+                            <div class="tech-icon-circle"></div>
+                            <div class="tech-line" style="width: 75px; transform: rotate(20deg);"></div>
+                        </button>
+
+                        <button class="tech-icon" data-tech="dimensions" style="bottom: 25%; left: 10%;">
+                            <div class="tech-icon-circle"></div>
+                            <div class="tech-line" style="width: 70px; transform: rotate(40deg);"></div>
+                        </button>
+
+                        <button class="tech-icon" data-tech="wheels" style="bottom: 30%; left: 28%;">
+                            <div class="tech-icon-circle"></div>
+                            <div class="tech-line" style="width: 55px; transform: rotate(-35deg);"></div>
+                        </button>
+
+                        <button class="tech-icon" data-tech="brakes" style="bottom: 28%; left: 48%;">
+                            <div class="tech-icon-circle"></div>
+                            <div class="tech-line" style="width: 60px; transform: rotate(25deg);"></div>
+                        </button>
+
+                        <button class="tech-icon" data-tech="suspension" style="bottom: 25%; right: 25%;">
+                            <div class="tech-icon-circle"></div>
+                            <div class="tech-line" style="width: 70px; transform: rotate(-20deg);"></div>
+                        </button>
+
+                        <button class="tech-icon" data-tech="aerodynamics" style="bottom: 22%; right: 8%;">
+                            <div class="tech-icon-circle"></div>
+                            <div class="tech-line" style="width: 65px; transform: rotate(30deg);"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="footer-info">
+                        <h3 class="footer-company">Pagani s.p.a</h3>
+                        <div class="footer-contacts">
+                            <h4 class="footer-section-title">Locations & Contacts</h4>
+                            <p class="footer-text">Via dell' Industria 26 (MO)</p>
+                            <p class="footer-text">Tel. +39 059 4739201</p>
+                            <p class="footer-text footer-email"><a href="mailto:info@pagani.com">info@pagani.com</a></p>
+                            <p class="footer-text footer-sales">Ufficio vendite: <a href="mailto:sales@pagani.com">sales@pagani.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <div class="footer-right">
+                        <button class="scroll-to-top" aria-label="Scroll to top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+
+                        <a href="#" class="btn-get-in-touch">Get in touch</a>
+
+                        <div class="social-icons">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="TikTok">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         LIGHTBOX - READ MORE
+         ======================================== -->
+    <div class="lightbox-overlay" id="readMoreLightbox">
+        <div class="lightbox-content lightbox-text">
+            <button class="lightbox-close" aria-label="Chiudi">×</button>
+            <h3 class="lightbox-title">ZONDA R</h3>
+            <p class="lightbox-description">
+                Nel rispetto di un vento che soffia sempre più forte e veloce, Zonda R nasce per la pista e per la città, senza limiti, pronta per esprimere il proprio carattere in totale purezza e libertà. Ispirata alla versione F, la Zonda R ha un passo e una carreggiata specifica richiesta di un cliente e vive di un know-how ingegneristico dedicato, frutto della massima espressione tecnologica del team Pagani.
+                <br><br>
+                La Zonda R rappresenta il culmine dell'evoluzione della famiglia Zonda, un'auto progettata esclusivamente per la pista che combina prestazioni estreme con la bellezza artigianale che contraddistingue ogni creazione Pagani. Il motore AMG V12 da 6.0 litri eroga 750 CV, permettendo alla vettura di raggiungere prestazioni mozzafiato.
+            </p>
+        </div>
+    </div>
+
+    <!-- ========================================
+         LIGHTBOX - GALLERY IMAGE
+         ======================================== -->
+    <div class="lightbox-overlay" id="galleryLightbox">
+        <div class="lightbox-content lightbox-image">
+            <button class="lightbox-close" aria-label="Chiudi">×</button>
+            <div class="lightbox-image-container">
+                <div class="lightbox-image-placeholder"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         LIGHTBOX - TECHNICAL DATA
+         ======================================== -->
+    <div class="lightbox-overlay" id="techLightbox">
+        <div class="lightbox-content lightbox-tech">
+            <button class="lightbox-close" aria-label="Chiudi">×</button>
+            <div class="tech-lightbox-content">
+                <div class="tech-lightbox-icon">
+                    <div class="tech-lightbox-icon-placeholder"></div>
+                </div>
+                <div class="tech-lightbox-info">
+                    <h3 class="tech-lightbox-title" id="techLightboxTitle">Cambio</h3>
+                    <p class="tech-lightbox-text" id="techLightboxText">
+                        XTRAC 672 su specifica progetto, trasversale sequenziale infusione in magnesio; 6 marce ad innesti frontali con sistema dirobotizzazione Automac Engineering
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         DROPDOWN MENU - TIMELINE
+         ======================================== -->
+    <div class="timeline-dropdown" id="timelineDropdown">
+        <div class="timeline-dropdown-content">
+            <button class="timeline-dropdown-close" id="timelineDropdownClose">×</button>
+            <div class="timeline-dropdown-list">
+                <button class="timeline-dropdown-item" data-year="2009" data-model="Zonda Cinque Roadster">
+                    <span class="dropdown-year">2009</span>
+                    <span class="dropdown-model">Zonda Cinque Roadster</span>
+                </button>
+                <button class="timeline-dropdown-item active" data-year="2009" data-model="Zonda R">
+                    <span class="dropdown-year">2009</span>
+                    <span class="dropdown-model">Zonda R</span>
+                </button>
+                <button class="timeline-dropdown-item" data-year="2010" data-model="Zonda Tricolore">
+                    <span class="dropdown-year">2010</span>
+                    <span class="dropdown-model">Zonda Tricolore</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+    <script src="js/header-script.js"></script>
+    <script src="js/collezione-dettaglio-script.js"></script>
+
+</body>
+</html>

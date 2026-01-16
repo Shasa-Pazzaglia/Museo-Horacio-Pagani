@@ -1,0 +1,819 @@
+/* ===================================
+   MUSEO PAGANI - EVENTO DETTAGLIO
+   CUSTOM STYLES RESPONSIVE
+   =================================== */
+
+/* ========== ROOT VARIABLES ========== */
+:root {
+    /* Colors */
+    --color-yellow: #f5c900;
+    --color-grey: #1e1e1e;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    
+    /* Typography */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Satoshi', sans-serif;
+    --font-weight: bold;
+    
+    /* Spacing */
+    --spacing-section: 80px;
+    --border-radius: 25px;
+    --line-height: 50px;
+    --mobile-margin: 15px;
+}
+
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ========== CONTAINER CUSTOMIZATION ========== */
+.container-fluid {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 0;
+}
+
+/* Fix Bootstrap Grid margin issues */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+[class*='col-'] {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+/* ========== PLACEHOLDER STYLES (TEMPORARY RED BOXES) ========== */
+.hero-image-placeholder,
+.gallery-image-placeholder,
+.social-icon-placeholder {
+    background-color: #ff0000;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+}
+
+/* ========== ACTIVE NAVIGATION LINK ========== */
+.nav-links a.active,
+.mobile-menu-links a.active {
+    color: var(--color-yellow) !important;
+}
+
+/* Specific placeholder sizes */
+.social-icon-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+}
+
+/* ========================================
+   EVENT DETAIL HERO SECTION
+   2 Box: Testo + Immagine
+   ======================================== */
+
+.event-detail-hero {
+    margin-bottom: var(--spacing-section);
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* Padding per gap di 20px tra le due colonne */
+.hero-left-padding {
+    padding-right: 10px !important;
+}
+
+.hero-right-padding {
+    padding-left: 10px !important;
+}
+
+/* Hero Text Box (Sinistra) */
+.hero-text-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 628px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
+
+.hero-text-content {
+    width: 100%;
+}
+
+.hero-event-title {
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 1.1;
+    color: var(--color-white);
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.hero-event-highlight {
+    color: var(--color-yellow);
+}
+
+.hero-event-description {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-white);
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Hero Image Box (Destra) */
+.hero-image-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 628px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* ========================================
+   GALLERY BENTO BOX SECTION
+   ======================================== */
+
+.gallery-section {
+    margin-bottom: var(--spacing-section);
+}
+
+/* ===== DESKTOP LAYOUT (min-width: 992px) ===== */
+
+/* Padding per gap di 20px tra le colonne */
+.gallery-col-left {
+    padding-right: 10px !important;
+    padding-left: 0 !important;
+}
+
+.gallery-col-center {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.gallery-col-right {
+    padding-left: 10px !important;
+    padding-right: 0 !important;
+}
+
+/* Base Gallery Box */
+.gallery-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Gallery Tall Image (Colonne 1 e 2) - Altezza piena */
+.gallery-tall-image {
+    height: 628px;
+}
+
+/* Gallery Square Bottom (Immagine sotto nella colonna 3) */
+.gallery-square-bottom {
+    height: 388px;
+    margin-top: 20px;
+}
+
+/* Gallery CTA Box (Giallo - Sopra nella colonna 3) */
+.gallery-cta {
+    background-color: var(--color-yellow);
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.cta-content {
+    text-align: center;
+}
+
+.cta-text {
+    font-family: var(--font-body);
+    font-size: 32px;
+    color: var(--color-black);
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.cta-link {
+    color: var(--color-black);
+    text-decoration: underline;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.cta-link:hover {
+    opacity: 0.7;
+}
+
+/* Gallery Image Placeholder */
+.gallery-image-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+/* ========================================
+   DESKTOP LAYOUT (min-width: 992px)
+   Forza layout 3 colonne affiancate
+   ======================================== */
+@media (min-width: 992px) {
+    
+    /* Hero Section - Forza affiancamento */
+    .event-detail-hero .row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    .hero-left-padding,
+    .hero-right-padding {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+    
+    /* Gallery Section - Forza layout 3 colonne */
+    .gallery-section .row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+    }
+    
+    .gallery-col-left,
+    .gallery-col-center,
+    .gallery-col-right {
+        flex: 0 0 33.333333% !important;
+        max-width: 33.333333% !important;
+        margin-bottom: 0 !important;
+    }
+    
+    /* Colonna 3 - Layout verticale interno */
+    .gallery-col-right {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
+/* ========================================
+   FOOTER SECTION - IDENTICO HOMEPAGE
+   ======================================== */
+.footer-container {
+    padding: 60px 0;
+    position: relative;
+}
+
+.footer-info {
+    color: var(--color-white);
+}
+
+.footer-company {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.footer-section-title {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.footer-text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.footer-email,
+.footer-sales {
+    margin-top: 12px;
+}
+
+/* Footer Right */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    position: relative;
+}
+
+.btn-get-in-touch {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    font-family: var(--font-body);
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    padding: 16px 56px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: bold;
+}
+
+.btn-get-in-touch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 201, 0, 0.4);
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-link {
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-4px);
+}
+
+/* Scroll to Top Button - FIXED POSITION */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    opacity: 1;
+    z-index: 100;
+}
+
+.scroll-to-top.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   FOOTER DESKTOP LAYOUT (min-width: 992px)
+   ======================================== */
+@media (min-width: 992px) {
+    /* Row del footer in flex con allineamento in alto */
+    .footer-container > .container-fluid > .row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+    }
+    
+    /* Colonna sinistra */
+    .footer-container .col-md-6:first-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    /* Colonna destra - forza allineamento in alto */
+    .footer-container .col-md-6:last-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        justify-content: flex-start !important;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .footer-right {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        gap: 20px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text-content,
+.cta-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (max-width: 991px)
+   ======================================== */
+@media (max-width: 991px) {
+    
+    /* ===== GENERALE ===== */
+    :root {
+        --spacing-section: 50px;
+    }
+    
+    .container-fluid {
+        padding-left: var(--mobile-margin);
+        padding-right: var(--mobile-margin);
+    }
+    
+    /* ===== HERO SECTION - TABLET ===== */
+    .hero-left-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 20px;
+    }
+
+    .hero-right-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 0;
+    }
+
+    .event-detail-hero {
+        margin-bottom: 20px;
+    }
+
+    .hero-text-box,
+    .hero-image-box {
+        height: 600px;
+    }
+    
+    .hero-text-box {
+        padding: 45px;
+    }
+    
+    .hero-event-title {
+        font-size: 48px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+    
+    .hero-event-description {
+        font-size: 18px;
+    }
+    
+    /* ===== GALLERY SECTION - TABLET (Stack verticale) ===== */
+    .gallery-col-left,
+    .gallery-col-center,
+    .gallery-col-right {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 20px;
+    }
+    
+    .gallery-tall-image {
+        height: 380px;
+    }
+    
+    .gallery-square-bottom {
+        height: 380px;
+        margin-top: 20px;
+    }
+    
+    .gallery-cta {
+        height: 380px;
+        padding: 35px;
+    }
+    
+    .cta-text {
+        font-size: 28px;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer-container {
+        padding: 50px 0;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 18px;
+        padding: 14px 48px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   ======================================== */
+@media (max-width: 768px) {
+    
+    /* ===== GENERALE ===== */
+    :root {
+        --spacing-section: 40px;
+        --border-radius: 25px;
+        --mobile-margin: 20px;
+    }
+    
+    .container-fluid {
+        padding-left: var(--mobile-margin);
+        padding-right: var(--mobile-margin);
+    }
+    
+    /* ===== HERO SECTION - MOBILE ===== */
+    .hero-left-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 20px;
+    }
+
+    .hero-right-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 0;
+    }
+
+    .event-detail-hero {
+        margin-bottom: 20px;
+    }
+
+    .hero-text-box,
+    .hero-image-box {
+        height: 500px;
+        border-radius: var(--border-radius);
+    }
+    
+    .hero-text-box {
+        padding: 30px;
+    }
+    
+    .hero-event-title {
+        font-size: 38px;
+        line-height: 1.1;
+        margin-bottom: 18px;
+    }
+    
+    .hero-event-description {
+        font-size: 16px;
+    }
+    
+    /* ===== GALLERY SECTION - MOBILE ===== */
+    .gallery-col-left,
+    .gallery-col-center,
+    .gallery-col-right {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 20px;
+    }
+    
+    /* Riordino elementi su mobile: immagini prima, CTA per ultimo */
+    .gallery-col-left {
+        order: 1;
+    }
+    
+    .gallery-col-center {
+        order: 2;
+    }
+    
+    .gallery-col-right {
+        order: 3;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .gallery-cta {
+        order: 2; /* CTA dopo l'immagine */
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    
+    .gallery-square-bottom {
+        order: 1; /* Immagine prima del CTA */
+        margin-top: 0;
+    }
+    
+    .gallery-tall-image {
+        height: 320px;
+    }
+    
+    .gallery-square-bottom {
+        height: 320px;
+        margin-top: 0;
+    }
+    
+    .gallery-cta {
+        height: 280px;
+        padding: 30px 25px;
+        margin-top: 20px;
+    }
+    
+    .cta-text {
+        font-size: 24px;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer-container {
+        padding: 40px 0;
+    }
+    
+    .footer-company {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-section-title {
+        font-size: 18px;
+    }
+    
+    .footer-text {
+        font-size: 15px;
+    }
+    
+    .footer-right {
+        align-items: flex-start;
+        margin-top: 40px;
+        gap: 30px;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 16px;
+        padding: 12px 40px;
+    }
+    
+    .social-icons {
+        gap: 12px;
+    }
+    
+    .social-icon-placeholder {
+        width: 45px;
+        height: 45px;
+    }
+
+    .scroll-to-top {
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE PICCOLO (max-width: 576px)
+   ======================================== */
+@media (max-width: 576px) {
+    
+    /* ===== GENERALE ===== */
+    :root {
+        --spacing-section: 35px;
+        --mobile-margin: 20px;
+    }
+    
+    .container-fluid {
+        padding-left: var(--mobile-margin);
+        padding-right: var(--mobile-margin);
+    }
+    
+    /* ===== HERO SECTION - MOBILE PICCOLO ===== */
+    .hero-text-box,
+    .hero-image-box {
+        height: 450px;
+    }
+    
+    .hero-text-box {
+        padding: 25px;
+    }
+    
+    .hero-event-title {
+        font-size: 32px;
+        line-height: 1.1;
+        margin-bottom: 16px;
+    }
+    
+    .hero-event-description {
+        font-size: 14px;
+    }
+
+    .event-detail-hero {
+        margin-bottom: 20px;
+    }
+
+    /* ===== GALLERY SECTION - MOBILE PICCOLO ===== */
+    
+    /* Riordino elementi: immagini prima, CTA per ultimo */
+    .gallery-col-right {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .gallery-cta {
+        order: 2;
+        margin-top: 20px;
+    }
+    
+    .gallery-square-bottom {
+        order: 1;
+        margin-top: 0;
+    }
+    
+    .gallery-tall-image {
+        height: 280px;
+    }
+    
+    .gallery-square-bottom {
+        height: 280px;
+        margin-top: 0;
+    }
+    
+    .gallery-cta {
+        height: 240px;
+        padding: 25px 20px;
+        margin-top: 20px;
+    }
+    
+    .cta-text {
+        font-size: 20px;
+    }
+
+    .gallery-section {
+        margin-bottom: 40px;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer-company {
+        font-size: 17px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-section-title {
+        font-size: 17px;
+    }
+    
+    .footer-text {
+        font-size: 14px;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 15px;
+        padding: 11px 36px;
+    }
+    
+    .social-icon-placeholder {
+        width: 42px;
+        height: 42px;
+    }
+
+    .scroll-to-top {
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}

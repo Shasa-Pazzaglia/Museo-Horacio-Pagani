@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/form-pagamento.css">
+        <link rel="stylesheet" href="css/bootstrap-grid.css">
+        <title>Form di pagamento</title>
+    </head>
+    <body>
+        <div class="form-container">
+            <button class="close-btn">
+                <span class="close-icon">&times;</span>
+            </button>
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <!--=================================
+                        COLONNA DI SINISTRA
+                        =================================-->
+                    <div class="left-column col-6">
+                        <div class="radio-group-inline">
+                            <div class="radio-btn-half">
+                                <input type="radio" id="privato" name="tipo" checked>
+                                <label for="privato">
+                                    <div class="radio-circle">
+                                        <div class="radio-circle-inner"></div>
+                                    </div>
+                                </label>
+                                <span class="radio-text">Privato</span>
+                            </div>
+
+                            <div class="radio-btn-half">
+                                <input type="radio" id="azienda" name="tipo">
+                                <label for="azienda">
+                                    <div class="radio-circle">
+                                        <div class="radio-circle-inner"></div>
+                                    </div>
+                                </label>
+                                <span class="radio-text">Azienda</span>
+                            </div>
+                        </div>
+                        
+                        <input type="text" class="form-input" placeholder="Nome*" required>
+                        <input type="text" class="form-input" placeholder="Cognome*" required>
+                        <input type="text" class="form-input" placeholder="Paese*" required>
+                        <input type="text" class="form-input" placeholder="Città*" required>
+                        <input type="text" class="form-input" placeholder="Indirizzo*" required>
+                        <input type="email" class="form-input" placeholder="Email*" required>
+                        <input type="tel" class="form-input" placeholder="Telefono*" required>
+                    </div>
+                    
+                    <!--=================================
+                        COLONNA DI DESTRA
+                        =================================-->
+                    <div class="col-6">
+                        <!-- Payment Methods Box -->
+                        <div class="payment-methods-box">
+                            <div class="payment-option">
+                                <input type="radio" id="applepay" name="payment">
+                                <label for="applepay">
+                                    <div class="radio-circle">
+                                        <div class="radio-circle-inner"></div>
+                                    </div>
+                                </label>
+                                <span class="radio-text">Apple Pay</span>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="googlepay" name="payment">
+                                <label for="googlepay">
+                                    <div class="radio-circle">
+                                        <div class="radio-circle-inner"></div>
+                                    </div>
+                                </label>
+                                <span class="radio-text">Google Pay</span>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="paypal" name="payment">
+                                <label for="paypal">
+                                    <div class="radio-circle">
+                                        <div class="radio-circle-inner"></div>
+                                    </div>
+                                </label>
+                                <span class="radio-text">PayPal</span>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="carta" name="payment" checked>
+                                <label for="carta">
+                                    <div class="radio-circle">
+                                        <div class="radio-circle-inner"></div>
+                                    </div>
+                                </label>
+                                <span class="radio-text">Carta di credito</span>
+                            </div>
+                        </div>
+
+                        <!-- Credit Card Details -->
+                        <input type="text" class="form-input" placeholder="Nome">
+                        <input type="text" class="form-input" placeholder="Cognome">
+                        <input type="text" class="form-input" placeholder="Numero carta">
+
+                        <div class="row-small">
+                            <input type="text" class="form-input-half" placeholder="MM/AA">
+                            <input type="text" class="form-input-half" placeholder="CVV">
+                        </div>
+
+                        <button class="submit-btn" id="confermaBtn">Conferma ordine</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox-overlay" id="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightboxClose">&times;</button>
+                <div class="lightbox-icon">&#10003;</div>
+                <h2 class="lightbox-title">Ordine confermato!</h2>
+                <p class="lightbox-text">Il tuo ordine è andato a buon fine.</p>
+                <button class="lightbox-btn" id="lightboxOk">OK</button>
+            </div>
+        </div>
+
+        <script>
+            const confermaBtn = document.getElementById('confermaBtn');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxClose = document.getElementById('lightboxClose');
+            const lightboxOk = document.getElementById('lightboxOk');
+            const requiredFields = document.querySelectorAll('input[required]');
+
+            confermaBtn.addEventListener('click', function() {
+                let allFilled = true;
+
+                requiredFields.forEach(function(field) {
+                    field.classList.remove('error');
+                    if (field.value.trim() === '') {
+                        allFilled = false;
+                        field.classList.add('error');
+                    }
+                });
+
+                if (allFilled) {
+                    lightbox.classList.add('active');
+                }
+            });
+
+            lightboxClose.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+            });
+
+            lightboxOk.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+            });
+
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+        </script>
+    </body>
+</html>

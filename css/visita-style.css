@@ -1,0 +1,1132 @@
+/* ===================================
+   MUSEO PAGANI - VISITA PAGE STYLES
+   Sistema Bento Box con modulo 95px + 20px gap
+   =================================== */
+
+/* ========== ROOT VARIABLES ========== */
+:root {
+    /* Colors */
+    --color-yellow: #f5c900;
+    --color-grey: #1e1e1e;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    
+    /* Typography */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Satoshi', sans-serif;
+    --font-weight: bold;
+    
+    /* Spacing - Sistema Bento Box */
+    --module-size: 95px;
+    --gap-size: 20px;
+    --spacing-section: 80px;
+    --border-radius: 25px;
+    --mobile-margin: 20px;
+}
+
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ========== CONTAINER CUSTOMIZATION ========== */
+.container-fluid {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 0;
+}
+
+/* Fix Bootstrap Grid margin issues */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+[class*='col-'] {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+/* ========== PLACEHOLDER STYLES ========== */
+.logo-placeholder,
+.hero-image-placeholder,
+.map-placeholder,
+.info-icon-placeholder,
+.accessibility-icon-placeholder,
+.social-icon-placeholder {
+    background-color: #ff0000;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+}
+
+/* Specific placeholder sizes */
+.logo-placeholder {
+    width: 80px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.info-icon-placeholder {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.accessibility-icon-placeholder {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.social-icon-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+}
+
+/* ========================================
+   HERO SECTION - IDENTICA HOMEPAGE
+   ======================================== */
+
+.hero-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 720px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-image-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 60px;
+    width: 100%;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 1.1;
+    color: var(--color-white);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    font-weight: normal;
+    word-wrap: break-word;
+}
+
+.hero-title-highlight {
+    color: var(--color-yellow);
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-white);
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    border-radius: var(--border-radius);
+}
+
+.hero-section {
+    margin-bottom: var(--gap-size);
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* ========================================
+   BUTTONS SECTION - 2 PULSANTI AFFIANCATI
+   Altezza: 325px = 95px + 20px + 95px + 20px + 95px
+   ======================================== */
+
+.buttons-section {
+    margin-bottom: var(--gap-size);
+}
+
+/* Padding tra le colonne */
+.button-padding-left {
+    padding-right: 10px !important;
+}
+
+.button-padding-right {
+    padding-left: 10px !important;
+}
+
+.btn-visit-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 325px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-visit-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.btn-visit-box.btn-visit-yellow {
+    background-color: var(--color-yellow);
+}
+
+.btn-visit-title {
+    font-family: var(--font-display);
+    font-size: 56px;
+    line-height: 1.1;
+    color: var(--color-white);
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.btn-visit-box.btn-visit-yellow .btn-visit-title {
+    color: var(--color-black);
+}
+
+/* ========================================
+   MAP & INFO SECTION - IDENTICA HOMEPAGE
+   ======================================== */
+
+.map-info-section {
+    margin-bottom: var(--spacing-section);
+}
+
+/* Padding tra le colonne */
+.map-padding {
+    padding-right: 10px !important;
+}
+
+.info-padding {
+    padding-left: 10px !important;
+}
+
+/* COLONNA MAPPA */
+.map-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* COLONNA INFO BOXES */
+.info-boxes-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+/* SINGOLA INFO BOX */
+.info-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    padding: 30px 65px 30px 65px;
+    display: flex;
+    align-items: center;
+    gap: 65px;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-title {
+    font-family: var(--font-body);
+    font-size: 32px;
+    color: var(--color-yellow);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.info-text {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-white);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* ========================================
+   DESKTOP - MAP & INFO (min-width: 992px)
+   ======================================== */
+@media (min-width: 992px) {
+    /* Row flex per allineare le altezze */
+    .map-info-section > .container-fluid > .row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+    }
+    
+    /* Colonna mappa */
+    .map-info-section .map-padding {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding-right: 10px !important;
+    }
+    
+    /* Colonna info */
+    .map-info-section .info-padding {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding-left: 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Mappa quadrata */
+    .map-box {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        position: relative;
+    }
+    
+    .map-box .map-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Container info boxes */
+    .info-boxes-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 100%;
+    }
+    
+    /* Ogni info box si divide lo spazio */
+    .info-box {
+        flex: 1;
+        min-height: 0;
+    }
+}
+
+/* ========================================
+   PRICING SECTION - LISTINI PREZZI
+   ======================================== */
+
+.pricing-section {
+    margin-bottom: var(--spacing-section);
+}
+
+/* Padding tra colonne Title e Button */
+.pricing-title-padding {
+    padding-right: 10px !important;
+}
+
+.pricing-button-padding {
+    padding-left: 10px !important;
+}
+
+/* Title Box (col-8) - Altezza: 210px = 95px + 20px + 95px */
+.pricing-title-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 210px;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+}
+
+.pricing-title {
+    font-family: var(--font-display);
+    font-size: 48px;
+    line-height: 1.15;
+    color: var(--color-white);
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.pricing-title-highlight {
+    color: var(--color-yellow);
+}
+
+/* Button Box (col-4) - Altezza: 210px */
+.btn-buy-ticket {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-radius: var(--border-radius);
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.btn-buy-ticket:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(245, 201, 0, 0.4);
+}
+
+.btn-buy-text {
+    font-family: var(--font-display);
+    font-size: 48px;
+    line-height: 1.15;
+    color: var(--color-black);
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* Pricing Rows Container */
+.pricing-row-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 20px;
+}
+
+/* Single Pricing Row - Altezza: 95px */
+.pricing-row {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin-bottom: 20px;
+}
+
+.pricing-row:last-child {
+    margin-bottom: 0;
+}
+
+.pricing-category {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-white);
+    font-weight: 400;
+}
+
+.pricing-age {
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.pricing-bold {
+    font-weight: bold;
+}
+
+.pricing-price {
+    font-family: var(--font-body);
+    font-size: 24px;
+    color: var(--color-yellow);
+    font-weight: bold;
+}
+
+/* ========================================
+   ACCESSIBILITY SECTION - 3 CARDS
+   Altezza: 210px = 95px + 20px + 95px
+   ======================================== */
+
+.accessibility-section {
+    margin-bottom: var(--spacing-section);
+}
+
+/* Padding tra le colonne */
+.accessibility-padding {
+    padding-left: 6.66px !important;
+    padding-right: 6.66px !important;
+}
+
+.accessibility-padding:first-child {
+    padding-left: 0 !important;
+    padding-right: 10px !important;
+}
+
+.accessibility-padding:last-child {
+    padding-left: 10px !important;
+    padding-right: 0 !important;
+}
+
+.accessibility-card {
+    background-color: var(--color-yellow);
+    border-radius: var(--border-radius);
+    height: 210px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    gap: 30px;
+}
+
+.accessibility-content {
+    flex: 1;
+}
+
+.accessibility-title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    line-height: 1.1;
+    color: var(--color-black);
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+/* ========================================
+   FOOTER - IDENTICO HOMEPAGE
+   ======================================== */
+
+.footer-container {
+    padding: 60px 0;
+    position: relative;
+}
+
+.footer-info {
+    color: var(--color-white);
+}
+
+.footer-company {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.footer-section-title {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.footer-text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.footer-email,
+.footer-sales {
+    margin-top: 12px;
+}
+
+/* Footer Right */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.btn-get-in-touch {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    font-family: var(--font-body);
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    padding: 16px 56px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: bold;
+}
+
+.btn-get-in-touch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 201, 0, 0.4);
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-link {
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-4px);
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    opacity: 1;
+    z-index: 100;
+}
+
+.scroll-to-top.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   FOOTER DESKTOP (min-width: 992px)
+   ======================================== */
+@media (min-width: 992px) {
+    .footer-container > .container-fluid > .row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+    }
+    
+    .footer-container .col-md-6:first-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .footer-container .col-md-6:last-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        justify-content: flex-start !important;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .footer-right {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        gap: 20px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (max-width: 991px)
+   ======================================== */
+@media (max-width: 991px) {
+    
+    /* ===== GENERALE ===== */
+    :root {
+        --spacing-section: 50px;
+    }
+    
+    .container-fluid {
+        padding-left: var(--mobile-margin);
+        padding-right: var(--mobile-margin);
+    }
+    
+    /* ===== HERO SECTION ===== */
+    .hero-box {
+        height: 600px;
+    }
+    
+    .hero-content {
+        padding: 45px;
+    }
+    
+    .hero-title {
+        font-size: 48px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    /* ===== BUTTONS SECTION ===== */
+
+    
+    .btn-visit-box {
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    
+    .btn-visit-title {
+        font-size: 48px;
+    }
+    
+    /* ===== MAP & INFO ===== */
+    .map-padding,
+    .info-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .map-box {
+        height: 550px;
+        margin-bottom: 20px;
+        padding-bottom: 0;
+    }
+    
+    .map-box .map-placeholder {
+        position: relative;
+        height: 100%;
+    }
+    
+    .info-box {
+        padding: 25px 40px;
+        gap: 40px;
+        min-height: 180px;
+    }
+    
+    .info-icon-placeholder {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .info-title {
+        font-size: 28px;
+    }
+    
+    .info-text {
+        font-size: 18px;
+    }
+    
+    /* ===== PRICING SECTION ===== */
+    .pricing-title-padding,
+    .pricing-button-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .pricing-title-box {
+        height: 190px;
+        padding: 0 40px;
+        margin-bottom: 20px;
+    }
+    
+    .pricing-title {
+        font-size: 42px;
+    }
+    
+    .btn-buy-ticket {
+        height: 190px;
+    }
+    
+    .btn-buy-text {
+        font-size: 28px;
+    }
+    
+    .pricing-row {
+        height: 85px;
+        padding: 0 30px;
+    }
+    
+    .pricing-category {
+        font-size: 18px;
+    }
+    
+    .pricing-price {
+        font-size: 22px;
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    .accessibility-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .accessibility-padding:first-child {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.accessibility-padding:last-child {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+    
+    .accessibility-card {
+        height: 190px;
+        padding: 0 35px;
+        gap: 25px;
+        margin-bottom: 20px;
+    }
+    
+    .accessibility-icon-placeholder {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .accessibility-title {
+        font-size: 28px;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer-container {
+        padding: 50px 0;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 18px;
+        padding: 14px 48px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   ======================================== */
+@media (max-width: 768px) {
+    
+    /* ===== GENERALE ===== */
+    :root {
+        --spacing-section: 40px;
+        --mobile-margin: 20px;
+    }
+    
+    /* ===== HERO SECTION ===== */
+    .hero-box {
+        height: 600px;
+    }
+    
+    .hero-content {
+        padding: 30px;
+    }
+    
+    .hero-title {
+        font-size: 38px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    /* ===== BUTTONS SECTION ===== */
+    .btn-visit-box {
+        height: 150px;
+    }
+    
+    .btn-visit-title {
+        font-size: 20px;
+    }
+    
+    /* ===== MAP & INFO ===== */
+    .map-box {
+        height: 400px;
+    }
+    
+    .info-box {
+        padding: 20px 25px;
+        gap: 25px;
+        min-height: 140px;
+    }
+    
+    .info-icon-placeholder {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .info-title {
+        font-size: 24px;
+    }
+    
+    .info-text {
+        font-size: 16px;
+    }
+    
+    /* ===== PRICING SECTION ===== */
+    .pricing-title-box {
+        height: 170px;
+        padding: 0 30px;
+    }
+    
+    .pricing-title {
+        font-size: 36px;
+    }
+    
+    .btn-buy-ticket {
+        height: 170px;
+    }
+    
+    .btn-buy-text {
+        font-size: 30px;
+    }
+    
+    .pricing-row {
+        height: 75px;
+        padding: 0 25px;
+    }
+    
+    .pricing-category {
+        font-size: 16px;
+    }
+    
+    .pricing-price {
+        font-size: 20px;
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    .accessibility-card {
+        height: 170px;
+        padding: 0 30px;
+        gap: 20px;
+    }
+    
+    .accessibility-icon-placeholder {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .accessibility-title {
+        font-size: 28px;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer-company {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-section-title {
+        font-size: 18px;
+    }
+    
+    .footer-text {
+        font-size: 15px;
+    }
+    
+    .footer-right {
+        align-items: flex-start;
+        margin-top: 40px;
+        gap: 30px;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 16px;
+        padding: 12px 40px;
+    }
+    
+    .social-icons {
+        gap: 12px;
+    }
+    
+    .social-icon-placeholder {
+        width: 45px;
+        height: 45px;
+    }
+
+    .scroll-to-top {
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE PICCOLO (max-width: 576px)
+   ======================================== */
+@media (max-width: 576px) {
+    
+    /* ===== GENERALE ===== */
+    :root {
+        --spacing-section: 40px;
+    }
+    
+    /* ===== HERO SECTION ===== */
+    .hero-box {
+        height: 600px;
+    }
+    
+    .hero-content {
+        padding: 25px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+    }
+    
+    /* ===== BUTTONS SECTION ===== */
+    .btn-visit-box {
+        height: 150px;
+    }
+    
+    .btn-visit-title {
+        font-size: 26px;
+    }
+    
+    /* ===== MAP & INFO ===== */
+    .map-box {
+        height: 320px;
+    }
+    
+    .info-box {
+        padding: 18px 20px;
+        gap: 20px;
+        min-height: auto;
+    }
+    
+    .info-icon-placeholder {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .info-title {
+        font-size: 22px;
+    }
+    
+    .info-text {
+        font-size: 14px;
+    }
+    
+    /* ===== PRICING SECTION ===== */
+    .pricing-title-box {
+        height: 150px;
+        padding: 0 25px;
+    }
+    
+    .pricing-title {
+        font-size: 30px;
+    }
+    
+    .btn-buy-ticket {
+        height: 150px;
+    }
+    
+    .btn-buy-text {
+        font-size: 30px;
+    }
+    
+    .pricing-row {
+        height: 70px;
+        padding: 0 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 4px;
+    }
+    
+    .pricing-category {
+        font-size: 15px;
+    }
+    
+    .pricing-price {
+        font-size: 18px;
+    }
+    
+    /* ===== ACCESSIBILITY ===== */
+    .accessibility-card {
+        height: 150px;
+        padding: 0 25px;
+        gap: 18px;
+    }
+    
+    .accessibility-icon-placeholder {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .accessibility-title {
+        font-size: 28px;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer-company {
+        font-size: 17px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-section-title {
+        font-size: 17px;
+    }
+    
+    .footer-text {
+        font-size: 14px;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 15px;
+        padding: 11px 36px;
+    }
+    
+    .social-icon-placeholder {
+        width: 42px;
+        height: 42px;
+    }
+
+    .scroll-to-top {
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}

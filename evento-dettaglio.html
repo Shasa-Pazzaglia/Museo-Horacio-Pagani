@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagani Automobili al MIMO 2025 - Museo Horacio Pagani</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/Logo_Cerchi_White.svg">
+    
+    <!-- Bootstrap Grid CSS -->
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/header-style.css">
+    <link rel="stylesheet" href="css/evento-dettaglio-style.css">
+    
+    <!-- Fix Footer Desktop -->
+    <style>
+        @media (min-width: 992px) {
+            .footer-container .row {
+                position: relative;
+            }
+            .footer-right {
+                position: absolute !important;
+                bottom: 40px !important;
+                right: 40px !important;
+                top: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-end !important;
+                justify-content: flex-start !important;
+                gap: 30px !important;
+            }
+            .footer-right .scroll-to-top {
+                position: fixed !important;
+                margin-bottom: 0 !important;
+                z-index: 1000 !important;
+            }
+            .footer-right .scroll-to-top:not(.hidden) {
+                opacity: 1 !important;
+            }
+            .footer-right .btn-get-in-touch {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                transform: translateX(20px) !important;
+            }
+            .footer-right .social-icons {
+                transform: translateX(16px) !important;
+            }
+        }
+        
+        /* Fix Header Mobile */
+        @media (max-width: 991px) {
+            .main-header {
+                padding: 20px 20px 0 20px !important;
+            }
+            .main-header .container-fluid {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .header-container {
+                border-radius: 25px !important;
+            }
+            .header-logo-col {
+                position: relative !important;
+                left: auto !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ========================================
+         OVERLAY MENU MOBILE - IDENTICO HOMEPAGE
+         ======================================== -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        
+        <!-- Header Mobile: ITA/ENG + Icone (in alto a destra) -->
+        <div class="mobile-menu-header">
+            
+            <!-- Icona Area Privata -->
+            <a href="#" class="header-icon" aria-label="Area Privata">
+                <span class="icon-placeholder"></span>
+            </a>
+            
+            <!-- Icona Carrello -->
+            <a href="#" class="header-icon" aria-label="Carrello">
+                <span class="icon-placeholder"></span>
+            </a>
+            
+            <!-- Switcher Lingua -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="ita">ITA</button>
+                <span class="separator">|</span>
+                <button class="lang-btn" data-lang="eng">ENG</button>
+            </div>
+
+        </div>
+        
+        <!-- Bottone Chiusura (X) -->
+        <button class="close-menu-btn" id="closeMenuBtn" aria-label="Chiudi Menu">
+            <span class="close-icon"></span>
+        </button>
+
+        <!-- Contenuto Menu Mobile -->
+        <div class="mobile-menu-content">
+            
+            <!-- Links Menu Mobile -->
+            <nav class="mobile-menu-links">
+                <a href="visita.html">Visita</a>
+                <a href="eventi.html" class="active">Eventi</a>
+                <a href="collezione.html">Collezione</a>
+                <a href="store-main.html">Store</a>
+            </nav>
+
+        </div>
+
+    </div>
+
+    <!-- ========================================
+         LIGHTBOX SELEZIONE BIGLIETTO
+         ======================================== -->
+    <div class="ticket-lightbox-overlay" id="ticketLightbox">
+        <div class="ticket-lightbox-content">
+            <button class="ticket-lightbox-close" id="ticketLightboxClose">&times;</button>
+            <h2 class="ticket-lightbox-title">SCEGLI IL TUO BIGLIETTO</h2>
+            <div class="ticket-lightbox-buttons">
+                <a href="visita.html#visita-guidata" class="btn-visit-box btn-visit-yellow">
+                    <h3 class="btn-visit-title">VISITA GUIDATA AL MUSEO<br>HORACIO PAGANI E ATELIER</h3>
+                </a>
+                <a href="visita.html#visita-standard" class="btn-visit-box">
+                    <h3 class="btn-visit-title">VISITA STANDARD<br>ALL'HORACIO PAGANI MUSEO</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         HEADER DESKTOP - IDENTICO HOMEPAGE
+         ======================================== -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 px-0">
+                    <div class="header-container">
+                        
+                        <!-- ROW INTERNA PER LAYOUT A 3 COLONNE -->
+                        <div class="header-row w-100">
+                            
+                            <!-- ===== COLONNA 1: LOGO (SINISTRA) ===== -->
+                            <div class="header-logo-col">
+                                <div class="logo-box">
+                                    <a href="index.html" class="logo-link" aria-label="Torna alla Home">
+                                        <span class="logo-placeholder"></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- ===== COLONNA 2: NAVIGAZIONE (CENTRATA TRA LOGO E ITA/ENG) ===== -->
+                            <div class="header-nav-col d-none d-lg-flex">
+                                <nav class="nav-links">
+                                    <a href="visita.html">Visita</a>
+                                    <a href="eventi.html" class="active">Eventi</a>
+                                    <a href="collezione.html">Collezione</a>
+                                    <a href="store-main.html">Store</a>
+                                </nav>
+                            </div>
+
+                            <!-- ===== COLONNA 3: AZIONI DESTRA (ITA/ENG + BIGLIETTO + ICONE) ===== -->
+                            <div class="header-actions-col">
+                                <div class="actions">
+                                    
+                                    <!-- Switcher Lingua (Solo Desktop) -->
+                                    <div class="lang-switcher d-none d-lg-flex">
+                                        <button class="lang-btn active" data-lang="ita">ITA</button>
+                                        <span class="separator">|</span>
+                                        <button class="lang-btn" data-lang="eng">ENG</button>
+                                    </div>
+
+                                    <!-- Bottone Biglietto (Sempre visibile) -->
+                                    <a href="#" class="btn-ticket">Biglietto</a>
+
+                                    <!-- Icona Area Privata (Solo Desktop) -->
+                                    <a href="#" class="header-icon d-none d-lg-flex" aria-label="Area Privata">
+                                        <span class="icon-placeholder"></span>
+                                    </a>
+
+                                    <!-- Icona Carrello (Solo Desktop) -->
+                                    <a href="#" class="header-icon d-none d-lg-flex" aria-label="Carrello">
+                                        <span class="icon-placeholder"></span>
+                                    </a>
+                                    
+                                    <!-- Menu Hamburger (Solo Mobile/Tablet) -->
+                                    <button class="hamburger-btn d-lg-none" id="hamburgerBtn" aria-label="Apri Menu">
+                                        <span class="hamburger-icon"></span>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================
+         EVENT DETAIL HERO SECTION
+         2 Box: Testo (sinistra) + Immagine (destra)
+         ======================================== -->
+    <section class="event-detail-hero">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- ===== BOX TESTO (SINISTRA) ===== -->
+                <div class="col-12 col-lg-6 hero-left-padding">
+                    <div class="hero-text-box">
+                        <div class="hero-text-content">
+                            <h1 class="hero-event-title">
+                                PAGANI AUTOMOBILI AL<br>
+                                <span class="hero-event-highlight">MIMO 2025</span>
+                            </h1>
+                            <p class="hero-event-description">
+                                L'Utopia ha inaugurato il terzo capitolo della storia Pagani. Prodotta in soli novantanove esemplari, unisce il fascino delle forme sinuose degli anni Cinquanta e Sessanta a una visione autenticamente contemporanea. sono scelte che vanno controcorrente, nel nome della leggerezza e della connessione diretta tra il guidatore e la macchina.
+                                Il principio di Arte e Scienza, da sempre presente nelle creazioni di Pagani Automobili e il filo rosso che lega il designer Horacio Pagani a Leonardo da Vinci sono al centro della mostra temporanea che sarà inaugurata domani quando la nuova Hypercar sarà esposta accanto a sei disegni originali dell'eclettico artista, genio incomparabile.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ===== BOX IMMAGINE (DESTRA) ===== -->
+                <div class="col-12 col-lg-6 hero-right-padding">
+                    <div class="hero-image-box">
+                        <div class="hero-image-placeholder"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         GALLERY BENTO BOX SECTION
+         Layout: 3 colonne (Immagine + Immagine + Colonna divisa)
+         ======================================== -->
+    <section class="gallery-section">
+        <div class="container-fluid">
+            
+            <!-- ===== GALLERY ROW: 3 COLONNE ===== -->
+            <div class="row">
+                
+                <!-- COLONNA 1 - Immagine Grande -->
+                <div class="col-12 col-lg-4 gallery-col-left">
+                    <div class="gallery-box gallery-tall-image">
+                        <div class="gallery-image-placeholder"></div>
+                    </div>
+                </div>
+                
+                <!-- COLONNA 2 - Immagine Grande -->
+                <div class="col-12 col-lg-4 gallery-col-center">
+                    <div class="gallery-box gallery-tall-image">
+                        <div class="gallery-image-placeholder"></div>
+                    </div>
+                </div>
+                
+                <!-- COLONNA 3 - Divisa in 2 (CTA + Immagine) -->
+                <div class="col-12 col-lg-4 gallery-col-right">
+                    
+                    <!-- CTA Giallo (Sopra) -->
+                    <div class="gallery-box gallery-cta">
+                        <div class="cta-content">
+                            <p class="cta-text">
+                                Per maggiori informazioni<br>
+                                sull'Utopia, <a href="collezione-dettaglio.html" class="cta-link">clicca qui</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Immagine (Sotto) -->
+                    <div class="gallery-box gallery-square-bottom">
+                        <div class="gallery-image-placeholder"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- ========================================
+         FOOTER - IDENTICO HOMEPAGE
+         ======================================== -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- Company Info & Contacts (6 colonne) -->
+                <div class="col-12 col-md-6">
+                    <div class="footer-info">
+                        <h3 class="footer-company">Pagani s.p.a</h3>
+                        <div class="footer-contacts">
+                            <h4 class="footer-section-title">Locations & Contacts</h4>
+                            <p class="footer-text">Via dell' Industria 26 (MO)</p>
+                            <p class="footer-text">Tel. +39 059 4739201</p>
+                            <p class="footer-text footer-email"><a href="mailto:info@pagani.com">info@pagani.com</a></p>
+                            <p class="footer-text footer-sales">Ufficio vendite: <a href="mailto:sales@pagani.com">sales@pagani.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA & Social (6 colonne) -->
+                <div class="col-12 col-md-6">
+                    <div class="footer-right">
+                        
+                        <a href="#" class="btn-get-in-touch">Get in touch</a>
+
+                        <div class="social-icons">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="TikTok">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                        </div>
+                        
+                        <!-- Scroll to Top Button -->
+                        <button class="scroll-to-top" aria-label="Scroll to top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+    <!-- Header JavaScript (Menu + Lingua) -->
+    <script src="js/header-script.js"></script>
+    
+    <!-- Evento Dettaglio JavaScript (Scroll + Animazioni) -->
+    <script src="js/evento-dettaglio-script.js"></script>
+
+</body>
+</html>

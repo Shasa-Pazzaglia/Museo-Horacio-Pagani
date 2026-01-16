@@ -1,0 +1,1192 @@
+/* ===================================
+   MUSEO PAGANI - CUSTOM STYLES RESPONSIVE
+   =================================== */
+
+/* ========== ROOT VARIABLES ========== */
+:root {
+    /* Colors */
+    --color-yellow: #f5c900;
+    --color-grey: #1e1e1e;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    
+    /* Typography */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Satoshi', sans-serif;
+    --font-weight: bold;
+    
+    /* Spacing */
+    --spacing-section: 80px;
+    --border-radius: 25px;
+    --line-height: 50px;
+    --mobile-margin: 15px;
+}
+
+/* ========== GLOBAL RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ========== CONTAINER CUSTOMIZATION ========== */
+.container-fluid {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 0;
+}
+
+/* Fix Bootstrap Grid margin issues */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+[class*='col-'] {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+/* ========================================
+   CORREZIONE: PADDING PER MAP & INFO SECTION
+   Gap di 20px tra le due colonne
+   ======================================== */
+.map-padding {
+    padding-right: 10px !important;
+}
+
+.info-padding {
+    padding-left: 10px !important;
+}
+
+/* ========== PLACEHOLDER STYLES (TEMPORARY RED BOXES) ========== */
+.logo-placeholder,
+.hero-image-placeholder,
+.map-placeholder,
+.info-icon-placeholder,
+.event-image-placeholder,
+.store-image-placeholder,
+.social-icon-placeholder {
+    background-color: #ff0000;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+}
+
+.logo-image {
+    width: 100%;
+    height: 52px;
+    width: 125px;
+}
+
+/* Specific placeholder sizes */
+.logo-placeholder {
+    width: 80px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.info-icon-placeholder {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.social-icon-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+}
+
+/* ========================================
+   HERO SECTION - RESPONSIVE
+   ======================================== */
+
+.hero-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 720px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-image-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 60px;
+    width: 100%;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 1.1;
+    color: var(--color-white);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    font-weight: normal;
+    word-wrap: break-word;
+}
+
+.hero-title-highlight {
+    color: var(--color-yellow);
+}
+
+.hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-white);
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background:rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    border-radius: var(--border-radius);
+}
+
+.hero-section {
+    margin-bottom: var(--spacing-section);
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* ========================================
+   MAP & INFO SECTION - BASE STYLES
+   ======================================== */
+.map-info-section {
+    margin-bottom: var(--spacing-section);
+}
+
+/* COLONNA MAPPA (sinistra) */
+.map-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* COLONNA INFO BOXES (destra) */
+.info-boxes-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+/* SINGOLA INFO BOX */
+.info-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    padding: 30px 65px 30px 65px;
+    display: flex;
+    align-items: center;
+    gap: 65px;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-title {
+    font-family: var(--font-body);
+    font-size: 32px;
+    color: var(--color-yellow);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.info-text {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-white);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* ========================================
+   DESKTOP ONLY - MAP & INFO (min-width: 992px)
+   Mappa quadrata + Info boxes stessa altezza
+   ======================================== */
+@media (min-width: 992px) {
+    /* Row flex per allineare le altezze */
+    .map-info-section > .container-fluid > .row {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+    }
+    
+    /* Colonna mappa */
+    .map-info-section .map-padding {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding-right: 10px !important;
+    }
+    
+    /* Colonna info */
+    .map-info-section .info-padding {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        padding-left: 10px !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Mappa quadrata usando padding-bottom trick */
+    .map-box {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%; /* Questo crea un quadrato perfetto */
+        position: relative;
+    }
+    
+    .map-box .map-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Container info boxes prende tutta l'altezza */
+    .info-boxes-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 100%;
+    }
+    
+    /* Ogni info box si divide lo spazio equamente */
+    .info-box {
+        flex: 1;
+        min-height: 0;
+    }
+}
+
+/* ========================================
+   EVENTS CAROUSEL SECTION
+   ======================================== */
+.events-section {
+    margin-bottom: var(--spacing-section);
+}
+
+.events-section .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.events-title-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 64px;
+    color: var(--color-white);
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.title-highlight {
+    color: var(--color-yellow);
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    padding-left: 20px;
+    cursor: default;
+}
+
+.carousel-track.no-transition {
+    transition: none !important;
+}
+
+.event-card {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    min-width: 440px;
+    height: 670px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.event-image-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.event-info {
+    position: absolute;
+    bottom: 530px;
+    left: 40px;
+    z-index: 2;
+}
+
+.event-location {
+    font-family: var(--font-body);
+    font-size: 20px;
+    color: var(--color-white);
+    font-weight: normal;
+}
+
+.event-city {
+    font-family: var(--font-display);
+    font-size: 64px;
+    color: var(--color-yellow);
+    letter-spacing: 1px;
+    line-height: 75px;
+    font-weight: normal;
+}
+
+/* Bottone Scopri di più - Solo Mobile */
+.btn-scopri-mobile {
+    display: none;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    display: flex;
+    gap: 12px;
+    z-index: 3;
+}
+
+.carousel-btn {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(245, 201, 0, 0.4);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+/* ========================================
+   STORE SECTION
+   ======================================== */
+.store-section {
+    margin-bottom: var(--spacing-section);
+}
+
+.store-box {
+    background-color: var(--color-grey);
+    border-radius: var(--border-radius);
+    height: 720px;
+    position: relative;
+    overflow: hidden;
+}
+
+.store-image-placeholder {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.store-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.store-title {
+    font-family: var(--font-display);
+    font-size: 56px;
+    color: var(--color-white);
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+
+.btn-store {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    font-family: var(--font-body);
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    padding: 12px 36px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: var(--font-weight);
+}
+
+.btn-store:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 201, 0, 0.4);
+}
+
+/* ========================================
+   FOOTER SECTION
+   ======================================== */
+.footer-container {
+    padding: 60px 0;
+    position: relative;
+}
+
+.footer-info {
+    color: var(--color-white);
+}
+
+.footer-company {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.footer-section-title {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.footer-text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.footer-email,
+.footer-sales {
+    margin-top: 12px;
+}
+
+/* Footer Right */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.btn-get-in-touch {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    font-family: var(--font-body);
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    padding: 16px 56px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: bold;
+}
+
+.btn-get-in-touch:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 201, 0, 0.4);
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-link {
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-4px);
+}
+
+/* Scroll to Top Button - FIXED POSITION */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    opacity: 1;
+    z-index: 100;
+}
+
+.scroll-to-top.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-to-top:hover {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   FOOTER DESKTOP LAYOUT (min-width: 992px)
+   ======================================== */
+@media (min-width: 992px) {
+    /* Row del footer in flex con allineamento in alto */
+    .footer-container > .container-fluid > .row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
+    }
+    
+    /* Colonna sinistra */
+    .footer-container .col-md-6:first-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    /* Colonna destra - forza allineamento in alto */
+    .footer-container .col-md-6:last-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        justify-content: flex-start !important;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .footer-right {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        gap: 20px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content,
+.store-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (max-width: 991px)
+   ======================================== */
+@media (max-width: 991px) {
+    
+    /* ===== GENERALE ===== */
+    :root {
+        --spacing-section: 50px;
+    }
+    
+    .container-fluid {
+        padding-left: var(--mobile-margin);
+        padding-right: var(--mobile-margin);
+    }
+    
+    /* ===== HERO SECTION - TABLET ===== */
+    .hero-box {
+        height: 600px;
+    }
+    
+    .hero-content {
+        padding: 45px;
+    }
+    
+    .hero-title {
+        font-size: 48px;
+        line-height: 1.1;
+        margin-bottom: 12px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    /* ===== MAP & INFO SECTION - TABLET STACK ===== */
+    .map-padding {
+        padding-right: 0 !important;
+    }
+    
+    .info-padding {
+        padding-left: 0 !important;
+    }
+    
+    .map-box {
+        height: 550px;
+        width: 100%;
+        padding-bottom: 0;
+    }
+    
+    .map-box .map-placeholder {
+        position: relative;
+        height: 100%;
+    }
+    
+    .info-boxes-container {
+        height: auto;
+        width: 100%;
+    }
+    
+    .info-box {
+        padding: 25px 40px;
+        gap: 40px;
+        min-height: 180px;
+    }
+    
+    .info-icon-placeholder {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .info-title {
+        font-size: 28px;
+    }
+    
+    .info-text {
+        font-size: 18px;
+    }
+    
+    /* ===== EVENTS SECTION ===== */
+    .events-title-box {
+        height: 85px;
+        margin-left: var(--mobile-margin);
+        margin-right: var(--mobile-margin);
+    }
+    
+    .section-title {
+        font-size: 52px;
+    }
+    
+    .event-card {
+        min-width: 380px;
+        height: 620px;
+    }
+    
+    .event-info {
+        bottom: 480px;
+        left: 35px;
+    }
+    
+    .event-location {
+        font-size: 18px;
+    }
+    
+    .event-city {
+        font-size: 56px;
+    }
+    
+    /* ===== STORE SECTION ===== */
+    .store-box {
+        height: 600px;
+    }
+    
+    .store-title {
+        font-size: 48px;
+    }
+    
+    .btn-store {
+        font-size: 16px;
+        padding: 12px 36px;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer-container {
+        padding: 50px 0;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 18px;
+        padding: 14px 48px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   ======================================== */
+@media (max-width: 768px) {
+    
+    /* ===== GENERALE ===== */
+    :root {
+        --spacing-section: 40px;
+        --border-radius: 25px;
+        --mobile-margin: 20px;
+    }
+    
+    .container-fluid {
+        padding-left: var(--mobile-margin);
+        padding-right: var(--mobile-margin);
+    }
+    
+    /* ===== HERO SECTION - MOBILE ===== */
+    .hero-box {
+        height: 600px;
+        border-radius: var(--border-radius);
+    }
+    
+    .hero-content {
+        padding: 30px;
+    }
+    
+    .hero-title {
+        font-size: 38px;
+        line-height: 1.1;
+        margin-bottom: 10px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    /* ===== MAP & INFO SECTION - MOBILE STACK ===== */
+    .map-padding,
+    .info-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    
+    .map-box {
+        height: 400px;
+        width: 100%;
+        padding-bottom: 0;
+        margin-bottom: 20px;
+        border-radius: var(--border-radius);
+    }
+    
+    .map-box .map-placeholder {
+        position: relative;
+        height: 100%;
+    }
+    
+    .info-boxes-container {
+        height: auto;
+        width: 100%;
+        gap: 20px;
+    }
+    
+    .info-box {
+        padding: 20px 25px;
+        gap: 25px;
+        flex-direction: row;
+        min-height: 140px;
+        border-radius: var(--border-radius);
+    }
+    
+    .info-icon-placeholder {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .info-title {
+        font-size: 24px;
+    }
+    
+    .info-text {
+        font-size: 16px;
+    }
+    
+    /* ===== EVENTS SECTION ===== */
+    .events-title-box {
+        height: 75px;
+        margin-left: var(--mobile-margin);
+        margin-right: var(--mobile-margin);
+        border-radius: var(--border-radius);
+    }
+    
+    .section-title {
+        font-size: 42px;
+    }
+    
+    .carousel-track {
+        padding-left: var(--mobile-margin);
+        gap: 15px;
+        cursor: grab;
+    }
+    
+    .event-card {
+        min-width: calc(100vw - 40px);
+        height: 550px;
+        border-radius: var(--border-radius);
+    }
+    
+    .event-info {
+        bottom: 420px;
+        left: 30px;
+    }
+    
+    .event-location {
+        font-size: 16px;
+    }
+    
+    .event-city {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+    
+    .carousel-controls {
+        display: none;
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+    
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .carousel-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Bottone Scopri di più - Visibile solo su Mobile */
+    .btn-scopri-mobile {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--color-yellow);
+        color: #000000;
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 700;
+        padding: 12px 28px;
+        border-radius: 25px;
+        text-align: center;
+        z-index: 10;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-scopri-mobile:active {
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+
+    /* ===== STORE SECTION ===== */
+    .store-box {
+        height: 500px;
+        border-radius: var(--border-radius);
+    }
+    
+    .store-title {
+        font-size: 38px;
+        margin-bottom: 24px;
+        padding: 0 20px;
+        line-height: 1.2;
+    }
+    
+    .btn-store {
+        font-size: 14px;
+        padding: 10px 28px;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer-container {
+        padding: 40px 0;
+    }
+    
+    .footer-company {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-section-title {
+        font-size: 18px;
+    }
+    
+    .footer-text {
+        font-size: 15px;
+    }
+    
+    .footer-right {
+        align-items: flex-start;
+        margin-top: 40px;
+        gap: 30px;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 16px;
+        padding: 12px 40px;
+    }
+    
+    .social-icons {
+        gap: 12px;
+    }
+    
+    .social-icon-placeholder {
+        width: 45px;
+        height: 45px;
+    }
+
+    .scroll-to-top {
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE PICCOLO (max-width: 576px)
+   ======================================== */
+@media (max-width: 576px) {
+    
+    /* ===== GENERALE ===== */
+    :root {
+        --spacing-section: 35px;
+        --mobile-margin: 20px;
+    }
+    
+    .container-fluid {
+        padding-left: var(--mobile-margin);
+        padding-right: var(--mobile-margin);
+    }
+    
+    /* ===== HERO SECTION - MOBILE PICCOLO ===== */
+    .hero-box {
+        height: 600px;
+    }
+    
+    .hero-content {
+        padding: 25px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+        line-height: 1.1;
+        margin-bottom: 8px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .hero-section {
+        margin-bottom: 40px;
+    }
+    
+    /* ===== MAP & INFO SECTION ===== */
+    .map-box {
+        height: 320px;
+        width: 100%;
+        padding-bottom: 0;
+    }
+    
+    .map-box .map-placeholder {
+        position: relative;
+        height: 100%;
+    }
+    
+    .info-boxes-container {
+        width: 100%;
+    }
+    
+    .info-box {
+        padding: 18px 20px;
+        gap: 20px;
+        text-align: left;
+        min-height: auto;
+    }
+    
+    .info-icon-placeholder {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .info-title {
+        font-size: 22px;
+    }
+    
+    .info-text {
+        font-size: 14px;
+    }
+
+    .map-info-section {
+        margin-bottom: 40px;
+    }
+    
+    /* ===== EVENTS SECTION ===== */
+    .events-title-box {
+        height: 70px;
+        margin-left: var(--mobile-margin);
+        margin-right: var(--mobile-margin);
+    }
+    
+    .section-title {
+        font-size: 36px;
+    }
+    
+    .carousel-track {
+        gap: 20px;
+    }
+    
+    .event-card {
+        min-width: calc(100vw - 80px);
+        height: 600px;
+    }
+    
+    .event-info {
+        bottom: 500px;
+        left: 25px;
+    }
+    
+    .event-location {
+        font-size: 15px;
+    }
+    
+    .event-city {
+        font-size: 40px;
+    }
+    
+    .carousel-controls {
+        display: none;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .events-section {
+        margin-bottom: 40px;
+    }
+    
+    /* ===== STORE SECTION ===== */
+    .store-box {
+        height: 420px;
+    }
+    
+    .store-title {
+        font-size: 32px;
+        padding: 0 15px;
+    }
+    
+    .btn-store {
+        font-size: 13px;
+        padding: 9px 24px;
+    }
+    
+    .store-section {
+        margin-bottom: 40px;
+    }
+    
+    /* ===== FOOTER ===== */
+    .footer-company {
+        font-size: 17px;
+        margin-bottom: 25px;
+    }
+    
+    .footer-section-title {
+        font-size: 17px;
+    }
+    
+    .footer-text {
+        font-size: 14px;
+    }
+    
+    .btn-get-in-touch {
+        font-size: 15px;
+        padding: 11px 36px;
+    }
+    
+    .social-icon-placeholder {
+        width: 42px;
+        height: 42px;
+    }
+
+    .scroll-to-top {
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Horacio Pagani - Visita</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/Logo_Cerchi_White.svg">
+    
+    <!-- Bootstrap Grid CSS -->
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/visita-style.css">
+    <link rel="stylesheet" href="css/header-style.css">
+    
+    <!-- Fix Footer Desktop -->
+    <style>
+        @media (min-width: 992px) {
+            .footer-container .row {
+                position: relative;
+            }
+            .footer-right {
+                position: absolute !important;
+                bottom: 40px !important;
+                right: 40px !important;
+                top: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-end !important;
+                justify-content: flex-start !important;
+                gap: 30px !important;
+            }
+            .footer-right .scroll-to-top {
+                position: fixed !important;
+                margin-bottom: 0 !important;
+                z-index: 1000 !important;
+            }
+            .footer-right .scroll-to-top:not(.hidden) {
+                opacity: 1 !important;
+            }
+            .footer-right .btn-get-in-touch {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                transform: translateX(20px) !important;
+            }
+            .footer-right .social-icons {
+                transform: translateX(16px) !important;
+            }
+        }
+        
+        /* Fix Header Mobile */
+        @media (max-width: 991px) {
+            .main-header {
+                padding: 20px 20px 0 20px !important;
+            }
+            .main-header .container-fluid {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .header-container {
+                border-radius: 25px !important;
+            }
+            .header-logo-col {
+                position: relative !important;
+                left: auto !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ========================================
+         OVERLAY MENU MOBILE - IDENTICO HOMEPAGE
+         ======================================== -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        
+        <!-- Header Mobile: ITA/ENG + Icone -->
+        <div class="mobile-menu-header">
+            
+            <!-- Icona Area Privata -->
+            <a href="#" class="header-icon" aria-label="Area Privata">
+                <span class="icon-placeholder"></span>
+            </a>
+            
+            <!-- Icona Carrello -->
+            <a href="#" class="header-icon" aria-label="Carrello">
+                <span class="icon-placeholder"></span>
+            </a>
+            
+            <!-- Switcher Lingua -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="ita">ITA</button>
+                <span class="separator">|</span>
+                <button class="lang-btn" data-lang="eng">ENG</button>
+            </div>
+
+        </div>
+        
+        <!-- Bottone Chiusura (X) -->
+        <button class="close-menu-btn" id="closeMenuBtn" aria-label="Chiudi Menu">
+            <span class="close-icon"></span>
+        </button>
+
+        <!-- Contenuto Menu Mobile -->
+        <div class="mobile-menu-content">
+
+            <!-- Links Menu Mobile -->
+            <nav class="mobile-menu-links">
+                <a href="visita.html" class="active">Visita</a>
+                <a href="eventi.html">Eventi</a>
+                <a href="collezione.html">Collezione</a>
+                <a href="store-main.html">Store</a>
+            </nav>
+
+        </div>
+
+    </div>
+
+    <!-- ========================================
+         HEADER DESKTOP - IDENTICO HOMEPAGE
+         ======================================== -->
+    <header class="main-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 px-0">
+                    <div class="header-container">
+                        
+                        <!-- ROW INTERNA PER LAYOUT A 3 COLONNE -->
+                        <div class="header-row w-100">
+                            
+                            <!-- COLONNA 1: LOGO -->
+                            <div class="header-logo-col">
+                                <div class="logo-box">
+                                    <a href="index.html" class="logo-link" aria-label="Torna alla Home">
+                                        <span class="logo-placeholder"></span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- COLONNA 2: NAVIGAZIONE -->
+                            <div class="header-nav-col d-none d-lg-flex">
+                                <nav class="nav-links">
+                                    <a href="visita.html" class="active">Visita</a>
+                                    <a href="eventi.html">Eventi</a>
+                                    <a href="collezione.html">Collezione</a>
+                                    <a href="store-main.html">Store</a>
+                                </nav>
+                            </div>
+
+                            <!-- COLONNA 3: AZIONI DESTRA -->
+                            <div class="header-actions-col">
+                                <div class="actions">
+                                    
+                                    <!-- Switcher Lingua (Solo Desktop) -->
+                                    <div class="lang-switcher d-none d-lg-flex">
+                                        <button class="lang-btn active" data-lang="ita">ITA</button>
+                                        <span class="separator">|</span>
+                                        <button class="lang-btn" data-lang="eng">ENG</button>
+                                    </div>
+
+                                    <!-- Bottone Biglietto -->
+                                    <a href="#" class="btn-ticket">Biglietto</a>
+
+                                    <!-- Icona Area Privata (Solo Desktop) -->
+                                    <a href="#" class="header-icon d-none d-lg-flex" aria-label="Area Privata">
+                                        <span class="icon-placeholder"></span>
+                                    </a>
+
+                                    <!-- Icona Carrello (Solo Desktop) -->
+                                    <a href="#" class="header-icon d-none d-lg-flex" aria-label="Carrello">
+                                        <span class="icon-placeholder"></span>
+                                    </a>
+                                    
+                                    <!-- Menu Hamburger (Solo Mobile/Tablet) -->
+                                    <button class="hamburger-btn d-lg-none" id="hamburgerBtn" aria-label="Apri Menu">
+                                        <span class="hamburger-icon"></span>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section class="hero-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 m-0 p-0">
+                    <div class="hero-box">
+                        <div class="hero-image-placeholder"></div>
+                        <div class="image-overlay"></div>
+                        <div class="hero-content">
+                            <h1 class="hero-title">
+                                HORACIO PAGANI<br>
+                                <span class="hero-title-highlight">MUSEO E ATELIER</span>
+                            </h1>
+                            <p class="hero-subtitle">Prenota ora la tua visita</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         BUTTONS SECTION - 2 PULSANTI AFFIANCATI
+         ======================================== -->
+    <section class="buttons-section">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- Pulsante Visita il Museo (col-6) -->
+                <div class="col-6 button-padding-left">
+                    <a href="#visita-standard" class="btn-visit-box">
+                        <h2 class="btn-visit-title">VISITA IL MUSEO</h2>
+                    </a>
+                </div>
+                
+                <!-- Pulsante Visita Guidata e Atelier (col-6) -->
+                <div class="col-6 button-padding-right">
+                    <a href="#visita-guidata" class="btn-visit-box btn-visit-yellow">
+                        <h2 class="btn-visit-title">VISITA GUIDATA<br>E ATELIER</h2>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         MAP & INFO SECTION - IDENTICA HOMEPAGE
+         ======================================== -->
+    <section class="map-info-section">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- COLONNA MAPPA (6 colonne) -->
+                <div class="col-12 col-lg-6 map-padding">
+                    <div class="map-box">
+                        <a href="https://www.google.com/maps/place/Museo+Horacio+Pagani/@44.5887887,11.0235726,17z/data=!3m1!4b1!4m6!3m5!1s0x477fe7886093a5f3:0x55d77cd5f4961b97!8m2!3d44.5887887!4d11.0235726!16s%2Fg%2F11g8v0m8jh?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" target="_blank" rel="noopener noreferrer">
+                            <div class="map-placeholder"></div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- COLONNA INFO BOXES (6 colonne) -->
+                <div class="col-12 col-lg-6 info-padding">
+                    <div class="info-boxes-container">
+                        
+                        <!-- Info Box 1: Indirizzo -->
+                        <div class="info-box">
+                            <div class="info-icon-placeholder"></div>
+                            <div class="info-content">
+                                <h3 class="info-title">Indirizzo</h3>
+                                <p class="info-text">Via dell'Industria, 26 - Vill. La Graziosa<br>41018 San Cesario sul Panaro (MO), Italia</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Info Box 2: Orari -->
+                        <div class="info-box">
+                            <div class="info-icon-placeholder"></div>
+                            <div class="info-content">
+                                <h3 class="info-title">Orari di apertura</h3>
+                                <p class="info-text">Tutti i giorni dalle 9:30 alle 17:00</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Info Box 3: Chiusura -->
+                        <div class="info-box">
+                            <div class="info-icon-placeholder"></div>
+                            <div class="info-content">
+                                <h3 class="info-title">Chiuso</h3>
+                                <p class="info-text">1 Novembre • 8 Dicembre • Dal 24 Dicembre al 6 gennaio compreso • 27 Febbraio-6 Marzo</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         VISITA GUIDATA AL MUSEO E ATELIER
+         ======================================== -->
+    <section class="pricing-section" id="visita-guidata">
+        <div class="container-fluid">
+            
+            <!-- Title + Button Row -->
+            <div class="row">
+                
+                <!-- Title (col-8) -->
+                <div class="col-12 col-lg-8 pricing-title-padding">
+                    <div class="pricing-title-box">
+                        <h2 class="pricing-title">
+                            VISITA GUIDATA AL MUSEO<br>
+                            <span class="pricing-title-highlight">HORACIO PAGANI</span> E ATELIER
+                        </h2>
+                    </div>
+                </div>
+                
+                <!-- Button (col-4) -->
+                <div class="col-12 col-lg-4 pricing-button-padding">
+                    <a href="#" class="btn-buy-ticket">
+                        <span class="btn-buy-text">ACQUISTA<br>BIGLIETTO VIP</span>
+                    </a>
+                </div>
+                
+            </div>
+            
+            <!-- Pricing Rows -->
+            <div class="row">
+                <div class="col-12 pricing-row-padding">
+                    
+                    <!-- ADULTI -->
+                    <div class="pricing-row">
+                        <span class="pricing-category">ADULTI</span>
+                        <span class="pricing-price">60€</span>
+                    </div>
+                    
+                    <!-- SENIOR +65 anni -->
+                    <div class="pricing-row">
+                        <span class="pricing-category">SENIOR <span class="pricing-age">+65 anni</span></span>
+                        <span class="pricing-price">50€</span>
+                    </div>
+                    
+                    <!-- MINORI di 18 anni -->
+                    <div class="pricing-row">
+                        <span class="pricing-category">MINORI <span class="pricing-age">di 18 anni</span></span>
+                        <span class="pricing-price">25€</span>
+                    </div>
+                    
+                    <!-- MINORI di 12 anni -->
+                    <div class="pricing-row">
+                        <span class="pricing-category">MINORI <span class="pricing-age">di 12 anni</span></span>
+                        <span class="pricing-price">GRATIS</span>
+                    </div>
+                    
+                    <!-- PERSONE CON DISABILITÀ -->
+                    <div class="pricing-row">
+                        <span class="pricing-category">PERSONE CON DISABILITÀ</span>
+                        <span class="pricing-price">GRATIS</span>
+                    </div>
+                    
+                    <!-- ACCOMPAGNATORI persone con disabilità -->
+                    <div class="pricing-row">
+                        <span class="pricing-category"><span class="pricing-bold">ACCOMPAGNATORI</span> persone con disabilità</span>
+                        <span class="pricing-price">25€</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- ========================================
+         VISITA STANDARD ALL'HORACIO PAGANI MUSEO
+         ======================================== -->
+    <section class="pricing-section" id="visita-standard">
+        <div class="container-fluid">
+            
+            <!-- Title + Button Row -->
+            <div class="row">
+                
+                <!-- Title (col-8) -->
+                <div class="col-12 col-lg-8 pricing-title-padding">
+                    <div class="pricing-title-box">
+                        <h2 class="pricing-title">
+                            VISITA STANDARD<br>
+                            ALL'<span class="pricing-title-highlight">HORACIO PAGANI</span> MUSEO
+                        </h2>
+                    </div>
+                </div>
+                
+                <!-- Button (col-4) -->
+                <div class="col-12 col-lg-4 pricing-button-padding">
+                    <a href="#" class="btn-buy-ticket">
+                        <span class="btn-buy-text">ACQUISTA<br>BIGLIETTO</span>
+                    </a>
+                </div>
+                
+            </div>
+            
+            <!-- Pricing Rows -->
+            <div class="row">
+                <div class="col-12 pricing-row-padding">
+                    
+                    <!-- ADULTI -->
+                    <div class="pricing-row">
+                        <span class="pricing-category">ADULTI</span>
+                        <span class="pricing-price">18€</span>
+                    </div>
+                    
+                    <!-- SENIOR +65 anni -->
+                    <div class="pricing-row">
+                        <span class="pricing-category">SENIOR <span class="pricing-age">+65 anni</span></span>
+                        <span class="pricing-price">15€</span>
+                    </div>
+                    
+                    <!-- MINORI di 18 anni -->
+                    <div class="pricing-row">
+                        <span class="pricing-category">MINORI <span class="pricing-age">di 18 anni</span></span>
+                        <span class="pricing-price">12€</span>
+                    </div>
+                    
+                    <!-- MINORI di 12 anni -->
+                    <div class="pricing-row">
+                        <span class="pricing-category">MINORI <span class="pricing-age">di 12 anni</span></span>
+                        <span class="pricing-price">GRATIS</span>
+                    </div>
+                    
+                    <!-- PERSONE CON DISABILITÀ -->
+                    <div class="pricing-row">
+                        <span class="pricing-category">PERSONE CON DISABILITÀ</span>
+                        <span class="pricing-price">GRATIS</span>
+                    </div>
+                    
+                    <!-- ACCOMPAGNATORI persone con disabilità -->
+                    <div class="pricing-row">
+                        <span class="pricing-category"><span class="pricing-bold">ACCOMPAGNATORI</span> persone con disabilità</span>
+                        <span class="pricing-price">15€</span>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- ========================================
+         ACCESSIBILITÀ - 3 CARDS AFFIANCATE
+         ======================================== -->
+    <section class="accessibility-section">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- Card 1: Carrozzine -->
+                <div class="col-12 col-lg-4 accessibility-padding">
+                    <div class="accessibility-card">
+                        <div class="accessibility-icon-placeholder"></div>
+                        <div class="accessibility-content">
+                            <h3 class="accessibility-title">Carrozzine<br>all'ingresso</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Pannelli tattili -->
+                <div class="col-12 col-lg-4 accessibility-padding">
+                    <div class="accessibility-card">
+                        <div class="accessibility-icon-placeholder"></div>
+                        <div class="accessibility-content">
+                            <h3 class="accessibility-title">Pannelli tattili</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3: Audioguida -->
+                <div class="col-12 col-lg-4 accessibility-padding">
+                    <div class="accessibility-card">
+                        <div class="accessibility-icon-placeholder"></div>
+                        <div class="accessibility-content">
+                            <h3 class="accessibility-title">Audioguida<br>trascritta</h3>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========================================
+         FOOTER - IDENTICO HOMEPAGE
+         ======================================== -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <!-- Company Info & Contacts (6 colonne) -->
+                <div class="col-12 col-md-6">
+                    <div class="footer-info">
+                        <h3 class="footer-company">Pagani s.p.a</h3>
+                        <div class="footer-contacts">
+                            <h4 class="footer-section-title">Locations & Contacts</h4>
+                            <p class="footer-text">Via dell' Industria 26 (MO)</p>
+                            <p class="footer-text">Tel. +39 059 4739201</p>
+                            <p class="footer-text footer-email"><a href="mailto:info@pagani.com">info@pagani.com</a></p>
+                            <p class="footer-text footer-sales">Ufficio vendite: <a href="mailto:sales@pagani.com">sales@pagani.com</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA & Social (6 colonne) -->
+                <div class="col-12 col-md-6">
+                    <div class="footer-right">
+                        
+                        <!-- Scroll to Top Button -->
+                        <button class="scroll-to-top" aria-label="Scroll to top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 15L12 9L6 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+
+                        <a href="#" class="btn-get-in-touch">Get in touch</a>
+
+                        <div class="social-icons">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="TikTok">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <div class="social-icon-placeholder"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+    <!-- Header JavaScript (Menu + Lingua) -->
+    <script src="js/header-script.js"></script>
+    
+    <!-- Visita Page JavaScript -->
+    <script src="js/visita-script.js"></script>
+
+</body>
+</html>

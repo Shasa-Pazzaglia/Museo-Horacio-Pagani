@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/form-style.css">
+        <link rel="stylesheet" href="css/bootstrap-grid.css">
+        <title>Form</title>
+    </head>
+    <body>
+        <div class="form-container">
+            <button class="close-btn">
+                <span class="close-icon">&times;</span>
+            </button>
+            
+            <div class="container-fluid">
+                <div class="row">
+                    <!--=================================
+                        COLONNA DI SINISTRA 
+                        =================================-->
+                    <div class="left-column col-6">
+                        <div class="radio-group">
+                            <div class="radio-btn">
+                                <input type="radio" id="privato" name="tipo" checked>
+                                <label for="privato">
+                                    <div class="radio-circle">
+                                        <div class="radio-circle-inner"></div>
+                                    </div>
+                                </label>
+                                <span class="radio-text">Privato</span>
+                            </div>
+                            
+                            <div class="radio-btn">
+                                <input type="radio" id="azienda" name="tipo">
+                                <label for="azienda">
+                                    <div class="radio-circle">
+                                        <div class="radio-circle-inner"></div>
+                                    </div>
+                                </label>
+                                <span class="radio-text">Azienda</span>
+                            </div>
+                        </div>
+                        
+                        <input type="text" class="form-input" placeholder="Nome">
+                        <input type="text" class="form-input" placeholder="Cognome">
+                        <input type="text" class="form-input" placeholder="gg/mm/aaaa">
+                        <input type="tel" class="form-input" placeholder="Telefono">
+                        <input type="email" class="form-input" placeholder="E-mail">
+
+                        <button class="submit-btn">Invia</button>
+                    </div>
+                    
+                    <!--=================================
+                        COLONNA DI DESTRA
+                        =================================-->
+                    <div class="col-6">
+                        <textarea class="form-textarea" placeholder="Lascia un commento"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox successo -->
+        <div class="lightbox" id="successLightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close">&times;</button>
+                <div class="lightbox-icon">&#10003;</div>
+                <h2 class="lightbox-title">Messaggio inviato!</h2>
+                <p class="lightbox-text">Grazie per averci contattato. Ti risponderemo il prima possibile.</p>
+                <button class="lightbox-btn">OK</button>
+            </div>
+        </div>
+
+        <script>
+            const submitBtn = document.querySelector('.submit-btn');
+            const lightbox = document.getElementById('successLightbox');
+            const lightboxClose = document.querySelector('.lightbox-close');
+            const lightboxBtn = document.querySelector('.lightbox-btn');
+
+            submitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                lightbox.classList.add('active');
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        </script>
+    </body>
+</html>

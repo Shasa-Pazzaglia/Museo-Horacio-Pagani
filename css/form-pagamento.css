@@ -1,0 +1,562 @@
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #000000;
+    padding: 50px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 50px;
+    line-height: 1;
+    cursor: pointer;
+    font-weight: 200;
+}
+.close-btn:hover {
+    opacity: 0.7;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.radio-group-inline {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 591px;
+}
+
+.radio-btn-half {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    height: 82px;
+    background-color: #1e1e1e;
+    padding: 20px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.radio-btn-half:hover {
+    background-color: #252525;
+}
+
+.radio-btn-half input[type="radio"] {
+    display: none;
+}
+
+.radio-btn-half input[type="radio"]:checked ~ label .radio-circle-inner {
+    display: block;
+}
+
+.radio-btn-half label {
+    cursor: pointer;
+    margin: 0;
+}
+
+.radio-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 591px;
+    height: 82px;
+    background-color: #1e1e1e;
+    padding: 20px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.radio-text {
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.radio-btn:hover {
+    background-color: #252525;
+}
+
+.radio-circle {
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-circle-inner {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    display: none;
+}
+
+.radio-btn input[type="radio"]:checked ~ label .radio-circle-inner {
+    display: block;
+}
+
+.radio-btn input[type="radio"] {
+    display: none;
+}
+
+.radio-btn label {
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.form-input {
+    width: 591px;
+    height: 82px;
+    background-color: #1e1e1e;
+    border: none;
+    color: white;
+    padding: 20px 20px;
+    border-radius: 25px;
+    font-size: 32px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: #888;
+}
+
+.form-input:focus {
+    outline: 2px solid #F5C900;
+}
+
+.form-input.error {
+    outline: 2px solid #ff4444;
+}
+
+.row-small {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-input-half {
+    width: 285px;
+    height: 82px;
+    background-color: #1e1e1e;
+    border: none;
+    color: white;
+    padding: 20px 20px;
+    border-radius: 25px;
+    font-size: 32px;
+    outline: none;
+}
+
+.form-input-half::placeholder {
+    color: #888;
+}
+
+.form-input-half:focus {
+    outline: 2px solid #F5C900;
+}
+
+.submit-btn {
+    width: 591px;
+    height: 82px;
+    background-color: #F5C900;
+    border: none;
+    color: #000000;
+    padding: 20px 20px;
+    border-radius: 25px;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #d4ad00;
+    opacity: 0.9;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    margin: 0 -15px;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    padding: 0 15px;
+}
+
+/* Payment Methods Box */
+.payment-methods-box {
+    width: 591px;
+    background-color: #1e1e1e;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.payment-option:hover {
+    background-color: #252525;
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-option input[type="radio"]:checked ~ label .radio-circle-inner {
+    display: block;
+}
+
+.payment-option label {
+    cursor: pointer;
+    margin: 0;
+}
+
+.payment-option .radio-text {
+    font-size: 28px;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    background-color: #1e1e1e;
+    border-radius: 25px;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.lightbox-close:hover {
+    opacity: 0.7;
+}
+
+.lightbox-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #F5C900;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 45px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.lightbox-title {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    margin: 0 0 15px 0;
+}
+
+.lightbox-text {
+    color: #888;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin: 0 0 30px 0;
+}
+
+.lightbox-btn {
+    background-color: #F5C900;
+    border: none;
+    color: #000000;
+    padding: 15px 60px;
+    border-radius: 25px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.lightbox-btn:hover {
+    background-color: #d4ad00;
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+   ========================================== */
+@media (max-width: 767px) {
+    .form-container {
+        padding: 15px 10px;
+    }
+
+    .close-btn {
+        display: none;
+    }
+
+    /* Bootstrap override for mobile - force single column */
+    .container-fluid {
+        padding: 0;
+    }
+
+    .row {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+    }
+
+    .left-column,
+    .col-6 {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Privato/Azienda buttons */
+    .radio-group-inline {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .radio-btn-half {
+        height: 55px;
+        padding: 12px 15px;
+        border-radius: 25px;
+        flex: 1;
+        gap: 8px;
+        justify-content: center;
+        width: auto;
+    }
+
+    .radio-btn-half .radio-text {
+        font-size: 18px;
+    }
+
+    .radio-btn-half .radio-circle {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+    }
+
+    .radio-btn-half .radio-circle-inner {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Form inputs - same height and width, border-radius 25px */
+    .form-input {
+        width: 100%;
+        max-width: 100%;
+        height: 55px;
+        font-size: 18px;
+        padding: 15px 18px;
+        border-radius: 25px;
+        margin-bottom: 12px;
+        box-sizing: border-box;
+    }
+
+    /* Half inputs (MM/AA e CVV) */
+    .row-small {
+        width: 100%;
+        max-width: 100%;
+        gap: 10px;
+        margin-bottom: 0;
+        display: flex;
+    }
+
+    .form-input-half {
+        height: 55px;
+        font-size: 18px;
+        padding: 15px 18px;
+        border-radius: 25px;
+        width: 45%;
+        max-width: 150px;
+        box-sizing: border-box;
+    }
+
+    /* Payment methods box - border-radius 25px */
+    .payment-methods-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 25px;
+        margin-bottom: 12px;
+        box-sizing: border-box;
+    }
+
+    .payment-option {
+        padding: 12px 8px;
+        gap: 10px;
+        border-radius: 25px;
+    }
+
+    .payment-option .radio-text {
+        font-size: 18px;
+    }
+
+    .payment-option .radio-circle {
+        width: 22px;
+        height: 22px;
+        flex-shrink: 0;
+    }
+
+    .payment-option .radio-circle-inner {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Submit button - same height, border-radius 25px */
+    .submit-btn {
+        width: 100%;
+        max-width: 100%;
+        height: 55px;
+        font-size: 18px;
+        padding: 15px 20px;
+        border-radius: 25px;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Lightbox Mobile */
+    .lightbox-content {
+        padding: 35px 20px;
+        border-radius: 25px;
+    }
+
+    .lightbox-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .lightbox-title {
+        font-size: 24px;
+    }
+
+    .lightbox-text {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .lightbox-btn {
+        padding: 12px 40px;
+        font-size: 18px;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+    }
+}
+
+/* Tablet responsive */
+@media (min-width: 768px) and (max-width: 991px) {
+    .form-container {
+        padding: 30px 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 600px;
+    }
+
+    .radio-group-inline,
+    .form-input,
+    .payment-methods-box,
+    .submit-btn,
+    .row-small {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .form-input-half {
+        flex: 1;
+    }
+}
